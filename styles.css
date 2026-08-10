@@ -1,16 +1,19 @@
 :root {
-  --umich-blue: #00274c;
-  --umich-blue-bright: #8ab6df;
-  --umich-maize: #ffcb05;
+  --blue: #58a6ff;
+  --blue-strong: #2f81f7;
+  --blue-soft: rgba(88, 166, 255, 0.14);
+  --blue-glow: rgba(88, 166, 255, 0.24);
+  --yellow: #f2cc60;
+  --yellow-soft: rgba(242, 204, 96, 0.12);
   --ink: #f0f6fc;
   --ink-soft: #8b949e;
-  --person: var(--umich-blue-bright);
-  --person-soft: rgba(0, 39, 76, 0.72);
-  --institution: var(--umich-maize);
-  --institution-soft: rgba(255, 203, 5, 0.12);
-  --accent: var(--umich-blue);
-  --accent-end: var(--umich-blue);
-  --accent-soft: rgba(0, 39, 76, 0.64);
+  --person: var(--blue);
+  --person-soft: var(--blue-soft);
+  --institution: var(--yellow);
+  --institution-soft: var(--yellow-soft);
+  --accent: var(--blue-strong);
+  --accent-end: var(--blue);
+  --accent-soft: var(--blue-soft);
   --page: #0d1117;
   --card: #161b22;
   --surface: #21262d;
@@ -36,10 +39,10 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    radial-gradient(circle at 8% 0%, rgba(0, 39, 76, 0.38), transparent 30rem),
+    radial-gradient(circle at 8% 0%, var(--blue-glow), transparent 30rem),
     radial-gradient(
       circle at 94% 18%,
-      rgba(255, 203, 5, 0.045),
+      rgba(47, 129, 247, 0.1),
       transparent 24rem
     ),
     var(--page);
@@ -60,8 +63,8 @@ a {
   left: 1rem;
   z-index: 100;
   padding: 0.5rem 0.75rem;
-  color: var(--umich-blue);
-  background: var(--umich-maize);
+  color: #fff;
+  background: var(--blue-strong);
   border-radius: var(--panel-radius);
   font-weight: 600;
   transform: translateY(-180%);
@@ -137,8 +140,8 @@ a {
   display: grid;
   place-items: center;
   color: var(--person);
-  background: rgba(0, 39, 76, 0.58);
-  border: 1px solid rgba(138, 182, 223, 0.32);
+  background: var(--blue-soft);
+  border: 1px solid rgba(88, 166, 255, 0.32);
   border-radius: 50%;
   text-decoration: none;
   box-shadow: 0 7px 18px rgba(0, 0, 0, 0.18);
@@ -151,15 +154,15 @@ a {
 }
 
 .profile-icon-link.email-link {
-  color: var(--umich-maize);
+  color: var(--yellow);
   background: var(--institution-soft);
-  border-color: rgba(255, 203, 5, 0.32);
+  border-color: rgba(242, 204, 96, 0.3);
 }
 
 .profile-icon-link:hover,
 .profile-icon-link:focus-visible {
   color: #fff;
-  background: var(--umich-blue);
+  background: var(--blue-strong);
   border-color: currentColor;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
   transform: translateY(-2px);
@@ -167,9 +170,9 @@ a {
 
 .profile-icon-link.email-link:hover,
 .profile-icon-link.email-link:focus-visible {
-  color: var(--umich-blue);
-  background: var(--umich-maize);
-  border-color: var(--umich-maize);
+  color: #161b22;
+  background: var(--yellow);
+  border-color: var(--yellow);
 }
 
 .profile-icon {
@@ -242,9 +245,9 @@ a {
 }
 
 .site-nav a.active {
-  color: var(--umich-maize);
+  color: var(--blue);
   background: var(--accent-soft);
-  box-shadow: inset 0 -2px 0 var(--umich-maize);
+  box-shadow: inset 0 -2px 0 var(--blue);
 }
 
 main {
@@ -261,7 +264,7 @@ main {
 .panel-title {
   margin: 0 0 16px;
   padding-bottom: 10px;
-  color: var(--umich-maize);
+  color: var(--blue);
   border-bottom: 1px solid var(--line);
   font-size: 0.875rem;
   font-weight: 600;
@@ -309,7 +312,7 @@ main {
   padding: 0.05em 0.24em;
   color: var(--person);
   background: var(--person-soft);
-  border: 1px solid rgba(138, 182, 223, 0.36);
+  border: 1px solid rgba(88, 166, 255, 0.34);
   border-radius: 4px;
   font-family: inherit;
   font-size: inherit;
@@ -320,7 +323,7 @@ main {
   padding: 0.05em 0.22em;
   color: var(--person);
   background: var(--person-soft);
-  border: 1px solid rgba(138, 182, 223, 0.36);
+  border: 1px solid rgba(88, 166, 255, 0.34);
   border-radius: 4px;
   font-weight: 600;
   text-decoration: none;
@@ -329,7 +332,7 @@ main {
 .about-copy a:hover,
 .about-copy a:focus-visible {
   color: #fff;
-  background: var(--umich-blue);
+  background: var(--blue-strong);
   border-color: var(--person);
 }
 
@@ -338,7 +341,7 @@ main {
   padding: 0.05em 0.22em;
   color: var(--institution);
   background: var(--institution-soft);
-  border-color: rgba(255, 203, 5, 0.38);
+  border-color: rgba(242, 204, 96, 0.34);
   border-radius: 4px;
   font-weight: 600;
   box-decoration-break: clone;
@@ -349,9 +352,9 @@ main {
 .about-copy .institution-link:focus-visible,
 .about-copy .lab-link:hover,
 .about-copy .lab-link:focus-visible {
-  color: var(--umich-blue);
-  background: var(--umich-maize);
-  border-color: var(--umich-maize);
+  color: #161b22;
+  background: var(--yellow);
+  border-color: var(--yellow);
 }
 
 .research-origin,
@@ -406,8 +409,9 @@ main {
   height: 1.5rem;
   display: grid;
   place-items: center;
-  color: var(--umich-maize);
-  background: var(--accent);
+  color: var(--blue);
+  background: var(--blue-soft);
+  border: 1px solid rgba(88, 166, 255, 0.3);
   border-radius: 50%;
   font-size: 0.6875rem;
   font-weight: 700;
@@ -431,7 +435,7 @@ main {
 .research-list a {
   color: var(--person);
   font-weight: 600;
-  text-decoration-color: rgba(138, 182, 223, 0.45);
+  text-decoration-color: rgba(88, 166, 255, 0.45);
   text-underline-offset: 3px;
 }
 
@@ -458,7 +462,7 @@ main {
 .news-label {
   display: inline-block;
   padding: 0.16rem 0.45rem;
-  color: var(--umich-maize);
+  color: var(--blue);
   background: var(--accent-soft);
   border-radius: 999px;
   font-size: 0.6875rem;
@@ -498,7 +502,7 @@ main {
 
 .post-kicker {
   margin: 0 0 0.45rem;
-  color: var(--umich-maize);
+  color: var(--blue);
   font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -643,9 +647,9 @@ main {
 .research-list li:focus,
 .research-list li:focus-within {
   background: var(--card);
-  border-color: rgba(255, 203, 5, 0.46);
+  border-color: rgba(88, 166, 255, 0.5);
   box-shadow:
-    inset 3px 0 0 var(--umich-maize),
+    inset 3px 0 0 var(--blue),
     0 12px 28px rgba(0, 0, 0, 0.2);
   transform: translateY(-1px);
 }
@@ -657,9 +661,9 @@ main {
 .research-list li:focus::after,
 .research-list li:focus-within::after {
   content: "−";
-  color: var(--umich-maize);
+  color: var(--blue);
   background: var(--accent-soft);
-  border-color: rgba(255, 203, 5, 0.4);
+  border-color: rgba(88, 166, 255, 0.42);
   transform: rotate(180deg);
 }
 
@@ -720,7 +724,7 @@ main {
 }
 
 a:focus-visible {
-  outline: 2px solid var(--umich-maize);
+  outline: 2px solid var(--blue);
   outline-offset: 2px;
 }
 
