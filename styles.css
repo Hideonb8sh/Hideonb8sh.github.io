@@ -475,6 +475,17 @@ main > .panel:nth-child(2) {
   box-shadow: 0 0 0 5px var(--blue-soft);
 }
 
+.section-heading {
+  width: 100%;
+  min-height: 1.7rem;
+  margin: 0 0 1.45rem;
+  padding-right: 3rem;
+}
+
+.section-heading .panel-title {
+  margin: 0;
+}
+
 .about-copy {
   width: 100%;
 }
@@ -822,6 +833,11 @@ main > .panel:nth-child(2) {
   right: 0.8rem;
 }
 
+.section-heading.hover-dialog-card::after {
+  top: 0;
+  right: 0;
+}
+
 .hover-dialog {
   position: absolute;
   top: calc(100% + 0.65rem);
@@ -878,6 +894,12 @@ main > .panel:nth-child(2) {
   font-size: var(--text-small);
   font-weight: 400;
   line-height: 1.62;
+}
+
+.section-heading > .hover-dialog {
+  right: auto;
+  left: 0;
+  width: min(36rem, 100%);
 }
 
 .post-card.hover-dialog-card:hover,
