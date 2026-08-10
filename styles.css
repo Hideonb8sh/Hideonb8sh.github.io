@@ -518,13 +518,13 @@ main {
 }
 
 .post-title-link {
-  color: var(--person);
+  color: var(--ink);
   text-decoration: none;
 }
 
 .post-title-link:hover,
 .post-title-link:focus-visible {
-  color: var(--person);
+  color: #fff;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
