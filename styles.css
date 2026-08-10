@@ -329,12 +329,16 @@ a {
 }
 
 .main-column {
+  position: relative;
+  z-index: 10;
   min-width: 0;
   display: grid;
   gap: 24px;
 }
 
 .site-nav {
+  position: relative;
+  z-index: 10;
   min-height: 54px;
   padding: 6px;
   display: flex;
@@ -387,6 +391,8 @@ a {
 }
 
 main {
+  position: relative;
+  z-index: 20;
   display: grid;
   gap: 24px;
 }
@@ -427,7 +433,7 @@ main {
 
 .panel:hover,
 .panel:focus-within {
-  z-index: 20;
+  z-index: 1000;
   border-color: var(--line-strong);
   box-shadow: 0 30px 76px rgba(0, 0, 0, 0.34);
   transform: translateY(-2px);
@@ -843,7 +849,7 @@ main > .panel:nth-child(2) {
   top: calc(100% + 0.65rem);
   right: 0.75rem;
   left: 0.75rem;
-  z-index: 50;
+  z-index: 2147483646;
   padding: 0.95rem 1.05rem;
   color: var(--ink-soft);
   background:
@@ -897,9 +903,28 @@ main > .panel:nth-child(2) {
 }
 
 .section-heading > .hover-dialog {
+  top: auto;
   right: auto;
+  bottom: calc(100% + 0.7rem);
   left: 0;
   width: min(36rem, 100%);
+  transform: translateY(0.55rem) scale(0.975);
+  transform-origin: bottom left;
+}
+
+.section-heading > .hover-dialog::before {
+  top: auto;
+  bottom: -0.4rem;
+  background: #101d30;
+  border-top: 0;
+  border-right: 1px solid rgba(117, 186, 255, 0.3);
+  border-bottom: 1px solid rgba(117, 186, 255, 0.3);
+  border-left: 0;
+}
+
+.section-heading > .hover-dialog::after {
+  top: 100%;
+  bottom: auto;
 }
 
 .post-card.hover-dialog-card:hover,
@@ -911,13 +936,19 @@ main > .panel:nth-child(2) {
 .project-sublist li:hover,
 .project-sublist li:focus,
 .project-sublist li:focus-within {
-  z-index: 30;
+  z-index: 10000;
   background:
     linear-gradient(145deg, rgba(30, 51, 79, 0.86), rgba(10, 21, 37, 0.88)),
     var(--card);
   border-color: rgba(117, 186, 255, 0.38);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
   transform: translateY(-3px);
+}
+
+.hover-dialog-card:hover,
+.hover-dialog-card:focus,
+.hover-dialog-card:focus-within {
+  z-index: 10000;
 }
 
 .hover-dialog-card:hover::after,
