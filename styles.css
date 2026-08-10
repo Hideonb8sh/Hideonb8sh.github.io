@@ -324,9 +324,13 @@ main {
 
 .research-list li {
   position: relative;
-  padding: 0.9rem 1rem 0.9rem 3rem;
+  padding: 0.9rem 3rem 0.9rem 3rem;
   background: var(--page);
   counter-increment: research-item;
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    box-shadow 160ms ease;
 }
 
 .research-list li + li {
@@ -422,7 +426,10 @@ main {
   background: var(--page);
   border: 1px solid var(--line);
   border-radius: var(--panel-radius);
-  transition: border-color 120ms ease;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
 }
 
 .post-card:hover {
@@ -509,6 +516,115 @@ main {
   color: var(--person);
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+.reveal-card {
+  position: relative;
+  padding-right: 3rem;
+  cursor: pointer;
+}
+
+.reveal-card::after,
+.research-list li::after {
+  content: "+";
+  position: absolute;
+  top: 0.8rem;
+  right: 0.9rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  display: grid;
+  place-items: center;
+  color: var(--ink-soft);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--panel-radius);
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1;
+  transition:
+    color 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.reveal-content,
+.research-list li > p {
+  max-height: 0;
+  margin-top: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transform: translateY(-0.25rem);
+  transition:
+    max-height 260ms ease,
+    margin-top 260ms ease,
+    opacity 160ms ease,
+    transform 260ms ease;
+}
+
+.reveal-card > p.post-summary:last-of-type {
+  margin-top: 0;
+}
+
+.project-card > .project-sublist {
+  border-color: transparent;
+}
+
+.reveal-card:hover,
+.reveal-card:focus,
+.reveal-card:focus-within {
+  border-color: #484f58;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transform: translateY(-1px);
+}
+
+.research-list li:hover,
+.research-list li:focus,
+.research-list li:focus-within {
+  background: var(--card);
+  box-shadow: inset 3px 0 0 var(--umich-maize);
+}
+
+.reveal-card:hover::after,
+.reveal-card:focus::after,
+.reveal-card:focus-within::after,
+.research-list li:hover::after,
+.research-list li:focus::after,
+.research-list li:focus-within::after {
+  content: "−";
+  color: var(--umich-maize);
+  background: var(--accent-soft);
+  border-color: rgba(255, 203, 5, 0.4);
+  transform: rotate(180deg);
+}
+
+.reveal-card:hover > .reveal-content,
+.reveal-card:focus > .reveal-content,
+.reveal-card:focus-within > .reveal-content,
+.research-list li:hover > p,
+.research-list li:focus > p,
+.research-list li:focus-within > p {
+  max-height: 18rem;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.reveal-card:hover > p.post-summary:last-of-type,
+.reveal-card:focus > p.post-summary:last-of-type,
+.reveal-card:focus-within > p.post-summary:last-of-type,
+.research-list li:hover > p,
+.research-list li:focus > p,
+.research-list li:focus-within > p {
+  margin-top: 0.45rem;
+}
+
+.project-card:hover > .project-sublist,
+.project-card:focus > .project-sublist,
+.project-card:focus-within > .project-sublist {
+  margin-top: 0.75rem;
+  border-color: var(--line);
 }
 
 .post-card-empty {
