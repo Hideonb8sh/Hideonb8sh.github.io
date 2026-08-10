@@ -1,12 +1,14 @@
 :root {
+  --umich-blue: #00274c;
+  --umich-maize: #ffcb05;
   --ink: #f4f7fb;
   --ink-soft: #c4cdda;
-  --person: #74b9ff;
-  --institution: #f0cb62;
-  --institution-soft: rgba(240, 203, 98, 0.12);
-  --accent: #4b9ff3;
-  --accent-end: #72b8f6;
-  --accent-soft: rgba(75, 159, 243, 0.14);
+  --person: var(--umich-maize);
+  --institution: var(--umich-maize);
+  --institution-soft: rgba(255, 203, 5, 0.12);
+  --accent: var(--umich-blue);
+  --accent-end: var(--umich-blue);
+  --accent-soft: rgba(0, 39, 76, 0.46);
   --page: #0b1119;
   --card: #131c28;
   --line: #293547;
@@ -45,8 +47,8 @@ a {
   left: 1rem;
   z-index: 100;
   padding: 0.7rem 1rem;
-  color: #08111c;
-  background: var(--accent);
+  color: var(--umich-blue);
+  background: var(--umich-maize);
   border-radius: 999px;
   font-weight: 700;
   transform: translateY(-180%);
@@ -114,8 +116,9 @@ a {
   display: inline-flex;
   margin-top: 0.85rem;
   padding: 0.4rem 0.8rem;
-  color: #fff;
+  color: var(--umich-maize);
   background: var(--accent);
+  border: 1px solid rgba(255, 203, 5, 0.32);
   border-radius: 999px;
   font-size: 0.72rem;
   font-weight: 700;
@@ -127,7 +130,8 @@ a {
 
 .profile-github:hover,
 .profile-github:focus-visible {
-  background: #69b2f7;
+  background: var(--umich-blue);
+  box-shadow: 0 0 0 2px rgba(255, 203, 5, 0.46);
   transform: translateY(-1px);
 }
 
@@ -173,14 +177,16 @@ a {
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
-  color: var(--accent);
+  color: var(--umich-maize);
   background: var(--accent-soft);
 }
 
 .site-nav a.active {
-  color: #fff;
-  background: linear-gradient(135deg, var(--accent), var(--accent-end));
-  box-shadow: 0 5px 14px rgba(61, 127, 196, 0.25);
+  color: var(--umich-maize);
+  background: var(--umich-blue);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 203, 5, 0.22),
+    0 5px 14px rgba(0, 39, 76, 0.45);
 }
 
 main {
@@ -197,7 +203,7 @@ main {
 .panel-title {
   margin: 0 0 20px;
   padding-bottom: 13px;
-  color: var(--accent);
+  color: var(--umich-maize);
   border-bottom: 1px solid var(--line);
   font-size: 0.74rem;
   font-weight: 800;
@@ -243,23 +249,31 @@ main {
 
 .person-name,
 .chinese-name {
-  color: var(--person);
+  padding: 0.02em 0.16em;
+  color: var(--umich-blue);
+  background: var(--umich-maize);
+  border: 1px solid var(--umich-maize);
+  border-radius: 0.22rem;
   font-family: inherit;
   font-size: inherit;
   font-weight: 720;
 }
 
 .about-copy a {
-  color: var(--person);
-  border-bottom: 1px solid rgba(18, 97, 165, 0.34);
+  padding: 0.02em 0.12em;
+  color: var(--umich-blue);
+  background: var(--umich-maize);
+  border: 1px solid var(--umich-maize);
+  border-radius: 0.22rem;
   font-weight: 670;
   text-decoration: none;
 }
 
 .about-copy a:hover,
 .about-copy a:focus-visible {
-  color: #a4d2ff;
-  border-color: currentColor;
+  color: var(--umich-maize);
+  background: var(--umich-blue);
+  border-color: rgba(255, 203, 5, 0.38);
 }
 
 .about-copy .institution-link,
@@ -267,7 +281,7 @@ main {
   padding: 0.02em 0.1em;
   color: var(--institution);
   background: var(--institution-soft);
-  border-color: rgba(138, 105, 7, 0.34);
+  border-color: rgba(255, 203, 5, 0.38);
   border-radius: 0.22rem;
   font-weight: 670;
   box-decoration-break: clone;
@@ -317,7 +331,7 @@ main {
   height: 1.35rem;
   display: grid;
   place-items: center;
-  color: #fff;
+  color: var(--umich-maize);
   background: var(--accent);
   border-radius: 50%;
   font-size: 0.68rem;
@@ -342,13 +356,13 @@ main {
 .research-list a {
   color: var(--person);
   font-weight: 670;
-  text-decoration-color: rgba(116, 185, 255, 0.5);
+  text-decoration-color: rgba(255, 203, 5, 0.5);
   text-underline-offset: 3px;
 }
 
 .research-list a:hover,
 .research-list a:focus-visible {
-  color: #b5dcff;
+  color: #fff;
 }
 
 .news-panel {
@@ -369,7 +383,7 @@ main {
 .news-label {
   display: inline-block;
   padding: 0.22rem 0.5rem;
-  color: var(--accent);
+  color: var(--umich-maize);
   background: var(--accent-soft);
   border-radius: 999px;
   font-size: 0.66rem;
@@ -401,7 +415,7 @@ main {
 
 .post-kicker {
   margin: 0 0 0.45rem;
-  color: var(--accent);
+  color: var(--umich-maize);
   font-size: 0.68rem;
   font-weight: 750;
   letter-spacing: 0.08em;
@@ -418,7 +432,7 @@ main {
 
 .post-title-link {
   color: var(--ink);
-  text-decoration-color: rgba(116, 185, 255, 0.45);
+  text-decoration-color: rgba(255, 203, 5, 0.45);
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
@@ -472,7 +486,7 @@ main {
 }
 
 a:focus-visible {
-  outline: 3px solid rgba(61, 127, 196, 0.42);
+  outline: 3px solid rgba(255, 203, 5, 0.5);
   outline-offset: 3px;
 }
 
