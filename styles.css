@@ -468,6 +468,41 @@ main {
   line-height: 1.6;
 }
 
+.project-card h3 {
+  font-size: 1rem;
+}
+
+.project-sublist {
+  margin: 0.85rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+  list-style: none;
+}
+
+.project-sublist li {
+  padding: 0.68rem 0.8rem;
+  background: #131c28;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.project-link {
+  color: var(--person);
+  font-size: 0.8rem;
+  font-weight: 680;
+  line-height: 1.45;
+  text-decoration-color: rgba(138, 182, 223, 0.45);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.project-link:hover,
+.project-link:focus-visible {
+  color: #fff;
+  text-decoration-color: var(--person);
+}
+
 .post-card-empty {
   background: linear-gradient(135deg, #182331, #151f2b);
   border-style: dashed;
