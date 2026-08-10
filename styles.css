@@ -387,14 +387,6 @@ main {
   line-height: 1.45;
 }
 
-.posts-lede {
-  max-width: 68ch;
-  margin: 0;
-  color: var(--ink-soft);
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-
 .post-list {
   display: grid;
   gap: 0.75rem;
