@@ -147,9 +147,6 @@ a {
 }
 
 .site-nav {
-  position: sticky;
-  top: 36px;
-  z-index: 20;
   min-height: 52px;
   padding: 6px;
   display: flex;
@@ -240,12 +237,15 @@ main {
 
 .about-copy .intro-line {
   color: var(--ink);
-  font-size: 0.95rem;
+  font-family: inherit;
+  font-size: var(--text-body);
 }
 
 .person-name,
 .chinese-name {
   color: var(--person);
+  font-family: inherit;
+  font-size: inherit;
   font-weight: 720;
 }
 
@@ -486,10 +486,6 @@ a:focus-visible {
   .profile-column {
     top: 20px;
   }
-
-  .site-nav {
-    top: 20px;
-  }
 }
 
 @media (max-width: 650px) {
@@ -508,7 +504,6 @@ a:focus-visible {
   }
 
   .site-nav {
-    top: 12px;
     overflow-x: auto;
     border-radius: 15px;
   }
