@@ -263,8 +263,7 @@ main {
 }
 
 .about-copy .institution-link,
-.about-copy .lab-link,
-.lab-label {
+.about-copy .lab-link {
   padding: 0.02em 0.1em;
   color: var(--institution);
   background: var(--institution-soft);
