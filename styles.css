@@ -1,9 +1,11 @@
 :root {
   --umich-blue: #00274c;
+  --umich-blue-bright: #8ab6df;
   --umich-maize: #ffcb05;
   --ink: #f4f7fb;
   --ink-soft: #c4cdda;
-  --person: var(--umich-maize);
+  --person: var(--umich-blue-bright);
+  --person-soft: rgba(0, 39, 76, 0.6);
   --institution: var(--umich-maize);
   --institution-soft: rgba(255, 203, 5, 0.12);
   --accent: var(--umich-blue);
@@ -250,9 +252,9 @@ main {
 .person-name,
 .chinese-name {
   padding: 0.02em 0.16em;
-  color: var(--umich-blue);
-  background: var(--umich-maize);
-  border: 1px solid var(--umich-maize);
+  color: var(--person);
+  background: var(--person-soft);
+  border: 1px solid rgba(138, 182, 223, 0.36);
   border-radius: 0.22rem;
   font-family: inherit;
   font-size: inherit;
@@ -261,9 +263,9 @@ main {
 
 .about-copy a {
   padding: 0.02em 0.12em;
-  color: var(--umich-blue);
-  background: var(--umich-maize);
-  border: 1px solid var(--umich-maize);
+  color: var(--person);
+  background: var(--person-soft);
+  border: 1px solid rgba(138, 182, 223, 0.36);
   border-radius: 0.22rem;
   font-weight: 670;
   text-decoration: none;
@@ -271,9 +273,9 @@ main {
 
 .about-copy a:hover,
 .about-copy a:focus-visible {
-  color: var(--umich-maize);
+  color: #fff;
   background: var(--umich-blue);
-  border-color: rgba(255, 203, 5, 0.38);
+  border-color: var(--person);
 }
 
 .about-copy .institution-link,
@@ -286,6 +288,15 @@ main {
   font-weight: 670;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
+}
+
+.about-copy .institution-link:hover,
+.about-copy .institution-link:focus-visible,
+.about-copy .lab-link:hover,
+.about-copy .lab-link:focus-visible {
+  color: var(--umich-blue);
+  background: var(--umich-maize);
+  border-color: var(--umich-maize);
 }
 
 .research-origin,
