@@ -552,19 +552,29 @@ main {
   padding: 0;
   display: grid;
   gap: 0;
-  overflow: hidden;
+  overflow: visible;
   border: 1px solid var(--line);
   border-radius: 11px;
   list-style: none;
 }
 
 .project-sublist li {
-  padding: 0.65rem 0.75rem;
+  position: relative;
+  padding: 0.7rem 2.75rem 0.7rem 0.8rem;
   background: var(--card);
+  transition: background 180ms ease;
 }
 
 .project-sublist li + li {
   border-top: 1px solid var(--line);
+}
+
+.project-sublist li:first-child {
+  border-radius: 10px 10px 0 0;
+}
+
+.project-sublist li:last-child {
+  border-radius: 0 0 10px 10px;
 }
 
 .project-link {
@@ -582,15 +592,18 @@ main {
   text-underline-offset: 3px;
 }
 
-.reveal-card {
+.hover-dialog-card {
   position: relative;
-  padding-right: 3rem;
-  cursor: pointer;
+  cursor: help;
 }
 
-.reveal-card::after,
-.research-list li::after {
-  content: "+";
+.post-card.hover-dialog-card,
+.research-list .hover-dialog-card {
+  padding-right: 3rem;
+}
+
+.hover-dialog-card::after {
+  content: "…";
   position: absolute;
   top: 0.8rem;
   right: 0.9rem;
@@ -602,9 +615,10 @@ main {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 50%;
-  font-size: 0.85rem;
-  font-weight: 600;
-  line-height: 1;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 0.65;
   transition:
     color 160ms ease,
     background 160ms ease,
@@ -612,37 +626,68 @@ main {
     transform 160ms ease;
 }
 
-.reveal-content,
-.research-list li > p {
-  max-height: 0;
-  margin-top: 0;
+.project-sublist .hover-dialog-card::after {
+  top: 0.62rem;
+  right: 0.72rem;
+}
+
+.hover-dialog {
+  position: absolute;
+  top: calc(100% + 0.55rem);
+  right: 0.8rem;
+  left: 0.8rem;
+  z-index: 40;
+  padding: 0.85rem 0.95rem;
+  color: var(--ink-soft);
+  background: rgba(33, 38, 45, 0.98);
+  border: 1px solid rgba(88, 166, 255, 0.38);
+  border-radius: 14px;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.42);
   opacity: 0;
-  overflow: hidden;
+  visibility: hidden;
   pointer-events: none;
-  transform: translateY(-0.25rem);
+  transform: translateY(-0.45rem) scale(0.985);
+  transform-origin: top left;
+  will-change: opacity, transform;
   transition:
-    max-height 260ms ease,
-    margin-top 260ms ease,
-    opacity 160ms ease,
-    transform 260ms ease;
+    opacity 420ms ease,
+    transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s linear 420ms;
 }
 
-.reveal-card > p.post-summary:last-of-type {
-  margin-top: 0;
+.hover-dialog::before {
+  content: "";
+  position: absolute;
+  top: -0.38rem;
+  left: 1.25rem;
+  width: 0.68rem;
+  height: 0.68rem;
+  background: inherit;
+  border-top: 1px solid rgba(88, 166, 255, 0.38);
+  border-left: 1px solid rgba(88, 166, 255, 0.38);
+  transform: rotate(45deg);
 }
 
-.project-card > .project-sublist {
-  border-color: transparent;
+.hover-dialog::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  left: 0;
+  height: 0.7rem;
 }
 
-.reveal-card:hover,
-.reveal-card:focus,
-.reveal-card:focus-within {
-  border-color: #484f58;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-  transform: translateY(-1px);
+.hover-dialog p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: var(--text-small);
+  font-weight: 400;
+  line-height: 1.58;
 }
 
+.post-card.hover-dialog-card:hover,
+.post-card.hover-dialog-card:focus,
+.post-card.hover-dialog-card:focus-within,
 .research-list li:hover,
 .research-list li:focus,
 .research-list li:focus-within {
@@ -654,45 +699,36 @@ main {
   transform: translateY(-1px);
 }
 
-.reveal-card:hover::after,
-.reveal-card:focus::after,
-.reveal-card:focus-within::after,
-.research-list li:hover::after,
-.research-list li:focus::after,
-.research-list li:focus-within::after {
-  content: "−";
+.project-sublist li:hover,
+.project-sublist li:focus,
+.project-sublist li:focus-within {
+  z-index: 20;
+  background: var(--surface);
+}
+
+.hover-dialog-card:hover,
+.hover-dialog-card:focus,
+.hover-dialog-card:focus-within {
+  z-index: 30;
+}
+
+.hover-dialog-card:hover::after,
+.hover-dialog-card:focus::after,
+.hover-dialog-card:focus-within::after {
   color: var(--blue);
   background: var(--accent-soft);
   border-color: rgba(88, 166, 255, 0.42);
-  transform: rotate(180deg);
+  transform: translateY(-1px);
 }
 
-.reveal-card:hover > .reveal-content,
-.reveal-card:focus > .reveal-content,
-.reveal-card:focus-within > .reveal-content,
-.research-list li:hover > p,
-.research-list li:focus > p,
-.research-list li:focus-within > p {
-  max-height: 18rem;
+.hover-dialog-card:hover > .hover-dialog,
+.hover-dialog-card:focus > .hover-dialog,
+.hover-dialog-card:focus-within > .hover-dialog {
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
-  transform: translateY(0);
-}
-
-.reveal-card:hover > p.post-summary:last-of-type,
-.reveal-card:focus > p.post-summary:last-of-type,
-.reveal-card:focus-within > p.post-summary:last-of-type,
-.research-list li:hover > p,
-.research-list li:focus > p,
-.research-list li:focus-within > p {
-  margin-top: 0.45rem;
-}
-
-.project-card:hover > .project-sublist,
-.project-card:focus > .project-sublist,
-.project-card:focus-within > .project-sublist {
-  margin-top: 0.75rem;
-  border-color: var(--line);
+  transform: translateY(0) scale(1);
+  transition-delay: 120ms, 120ms, 0s;
 }
 
 .post-card-empty {
@@ -788,5 +824,6 @@ a:focus-visible {
   *::before,
   *::after {
     transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
   }
 }

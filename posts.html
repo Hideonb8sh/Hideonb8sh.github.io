@@ -85,7 +85,7 @@
           <section class="panel post-section" id="articles" aria-labelledby="articles-title">
             <h2 class="panel-title" id="articles-title">Articles</h2>
             <div class="post-list">
-              <article class="post-card reveal-card" tabindex="0">
+              <article class="post-card hover-dialog-card" tabindex="0">
                 <h3>
                   <a
                     class="post-title-link"
@@ -97,11 +97,13 @@
                     Deep Neural Networks
                   </a>
                 </h3>
-                <p class="post-summary reveal-content">
-                  A technical article on when low-dimensional structures in
-                  deep neural networks form identifiable, geometrically simple
-                  trajectories.
-                </p>
+                <div class="hover-dialog">
+                  <p class="post-summary">
+                    A technical article on when low-dimensional structures in
+                    deep neural networks form identifiable, geometrically simple
+                    trajectories.
+                  </p>
+                </div>
               </article>
             </div>
           </section>
@@ -113,10 +115,10 @@
           >
             <h2 class="panel-title" id="projects-title">Projects</h2>
             <div class="post-list">
-              <article class="post-card project-card reveal-card" tabindex="0">
+              <article class="post-card project-card">
                 <h3>Low-Dimensional Representations with Heteroscedastic Data</h3>
-                <ul class="project-sublist reveal-content">
-                  <li>
+                <ul class="project-sublist">
+                  <li class="hover-dialog-card" tabindex="0">
                     <a
                       class="project-link"
                       href="https://github.com/Hideonb8sh/heteroscedastic_transform_learning"
@@ -124,8 +126,15 @@
                       rel="noreferrer"
                       >Transform Learning</a
                     >
+                    <div class="hover-dialog">
+                      <p>
+                        Adapts sparse-coding thresholds and transform-learning
+                        weights to each patch’s known noise variance, using softened
+                        precision weighting so a few clean patches do not dominate.
+                      </p>
+                    </div>
                   </li>
-                  <li>
+                  <li class="hover-dialog-card" tabindex="0">
                     <a
                       class="project-link"
                       href="https://github.com/Hideonb8sh/probabilistic_nearest_neighbor_graph_recovery"
@@ -133,6 +142,12 @@
                       rel="noreferrer"
                       >Probabilistic Nearest-Neighbor Graph Recovery</a
                     >
+                    <div class="hover-dialog">
+                      <p>
+                        Uses probabilistic modeling to recover nearest-neighbor
+                        graph structure from observations with unequal noise levels.
+                      </p>
+                    </div>
                   </li>
                 </ul>
               </article>
