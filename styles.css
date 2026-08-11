@@ -754,6 +754,96 @@ main > .panel:nth-child(2) {
   font-size: 0.92rem;
 }
 
+.project-feature-card {
+  position: relative;
+  padding: 1.05rem;
+  display: grid;
+  grid-template-columns: minmax(210px, 0.78fr) minmax(320px, 1.22fr);
+  align-items: stretch;
+  gap: 1rem;
+  overflow: visible;
+  background:
+    radial-gradient(
+      circle at 86% 28%,
+      rgba(241, 203, 112, 0.1),
+      transparent 34%
+    ),
+    linear-gradient(145deg, rgba(22, 39, 62, 0.82), rgba(7, 16, 29, 0.9)),
+    var(--card);
+}
+
+.project-feature-copy {
+  min-width: 0;
+  padding: 0.3rem 0.2rem 0.3rem 0.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-feature-copy > h3 {
+  margin: 0 0 1rem;
+  color: var(--ink);
+  font-size: 0.96rem;
+  font-weight: 660;
+  line-height: 1.48;
+  text-wrap: balance;
+}
+
+.project-feature-card .project-sublist {
+  grid-template-columns: 1fr;
+  gap: 0.65rem;
+}
+
+.project-feature-card .project-sublist li {
+  min-height: 58px;
+  padding: 0.78rem 2.65rem 0.78rem 0.85rem;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(145deg, rgba(25, 43, 68, 0.76), rgba(13, 25, 42, 0.82)),
+    var(--surface-soft);
+}
+
+.project-feature-card .project-sublist h4 {
+  margin: 0;
+  font: inherit;
+}
+
+.project-visual {
+  min-width: 0;
+  margin: 0;
+  padding: 0.42rem;
+  align-self: center;
+  overflow: hidden;
+  background:
+    linear-gradient(145deg, rgba(247, 243, 234, 0.98), rgba(224, 232, 235, 0.96));
+  border: 1px solid rgba(168, 213, 255, 0.23);
+  border-radius: 20px 20px 14px 20px;
+  box-shadow:
+    0 18px 34px rgba(0, 0, 0, 0.26),
+    0 0 0 1px rgba(241, 203, 112, 0.05) inset;
+}
+
+.project-visual img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  display: block;
+  object-fit: cover;
+  background: #f7f3ea;
+  border-radius: 15px 15px 10px 15px;
+  filter: saturate(0.96) contrast(1.015);
+  transition:
+    filter 420ms ease,
+    transform 560ms var(--ease-out);
+}
+
+.project-feature-card:hover .project-visual img,
+.project-feature-card:focus-within .project-visual img {
+  filter: saturate(1.02) contrast(1.025);
+  transform: scale(1.012);
+}
+
 .project-sublist {
   margin: 0;
   padding: 0;
@@ -1047,6 +1137,10 @@ a:focus-visible,
   .research-list .hover-dialog-card::after {
     top: 0.96rem;
   }
+
+  .project-feature-card {
+    grid-template-columns: minmax(190px, 0.72fr) minmax(280px, 1.28fr);
+  }
 }
 
 @media (max-width: 760px) {
@@ -1107,6 +1201,18 @@ a:focus-visible,
 
   .project-sublist {
     grid-template-columns: 1fr;
+  }
+
+  .project-feature-card {
+    grid-template-columns: 1fr;
+  }
+
+  .project-feature-copy {
+    padding: 0.35rem 0.2rem 0.1rem;
+  }
+
+  .project-visual {
+    grid-row: 1;
   }
 
   .hover-dialog {
