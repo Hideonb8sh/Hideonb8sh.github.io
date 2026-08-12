@@ -728,11 +728,18 @@ main > .panel:nth-child(2) {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.55rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.filter-controls::-webkit-scrollbar {
+  display: none;
 }
 
 .filter-button {
+  flex: 0 0 auto;
   min-height: 38px;
   padding: 0.58rem 0.85rem;
   color: var(--ink-faint);
@@ -744,6 +751,7 @@ main > .panel:nth-child(2) {
   font-weight: 650;
   letter-spacing: 0.012em;
   line-height: 1.2;
+  white-space: nowrap;
   cursor: pointer;
   transition:
     color 240ms ease,
@@ -777,6 +785,19 @@ main > .panel:nth-child(2) {
 .post-list {
   display: grid;
   gap: 0.9rem;
+}
+
+.projects-section-bare {
+  position: relative;
+  min-width: 0;
+  overflow: visible;
+  scroll-margin-top: 108px;
+}
+
+.projects-section-bare > .section-heading {
+  width: auto;
+  margin-right: 0.2rem;
+  margin-left: 0.2rem;
 }
 
 .post-card[hidden] {
@@ -863,6 +884,29 @@ main > .panel:nth-child(2) {
 
 .project-card {
   padding: 1.3rem;
+}
+
+.project-compact-card {
+  min-height: 96px;
+  padding: 1.2rem 1.3rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: center;
+  justify-items: start;
+  gap: 0.75rem;
+}
+
+.project-compact-card > h3 {
+  margin: 0;
+}
+
+.post-card.project-compact-card > .project-category-label {
+  margin: 0;
+  color: var(--blue-bright);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.045em;
+  line-height: 1.25;
 }
 
 .project-card > h3 {
