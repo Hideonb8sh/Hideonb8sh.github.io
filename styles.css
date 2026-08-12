@@ -999,6 +999,221 @@ main > .panel:nth-child(2) {
   transform: scale(1.012);
 }
 
+.project-visual-animated {
+  aspect-ratio: 3 / 2;
+}
+
+.project-animation {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 50% 32%, rgba(18, 47, 80, 0.64), transparent 55%),
+    #03101f;
+  border-radius: 15px 15px 10px 15px;
+}
+
+.project-animation .animation-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  display: block;
+  object-fit: cover;
+  background: transparent;
+  border-radius: 0;
+  filter: none;
+  will-change: opacity, transform, clip-path;
+}
+
+.project-feature-card:hover .project-animation .animation-layer,
+.project-feature-card:focus-within .project-animation .animation-layer {
+  filter: none;
+}
+
+.geodesic-network-layer {
+  z-index: 1;
+}
+
+.geodesic-manifold-layer {
+  z-index: 2;
+  opacity: 0;
+  clip-path: inset(100% 0 0 0);
+}
+
+.geodesic-projection-layer {
+  z-index: 3;
+  opacity: 0;
+  clip-path: inset(57% 0 0 0);
+}
+
+.project-card.is-animating .geodesic-manifold-layer {
+  animation: geodesic-manifold-sequence 8.4s var(--ease-out) infinite both;
+}
+
+.project-card.is-animating .geodesic-projection-layer {
+  animation: geodesic-projection-sequence 8.4s var(--ease-out) infinite both;
+}
+
+@keyframes geodesic-manifold-sequence {
+  0% {
+    opacity: 0;
+    clip-path: inset(100% 0 0 0);
+  }
+
+  2% {
+    opacity: 0.24;
+    clip-path: inset(98% 0 0 0);
+  }
+
+  12% {
+    opacity: 1;
+    clip-path: inset(82% 0 0 0);
+  }
+
+  36%,
+  88% {
+    opacity: 1;
+    clip-path: inset(27% 0 0 0);
+  }
+
+  97%,
+  100% {
+    opacity: 0;
+    clip-path: inset(27% 0 0 0);
+  }
+}
+
+@keyframes geodesic-projection-sequence {
+  0%,
+  40% {
+    opacity: 0;
+    clip-path: inset(82% 0 0 0);
+  }
+
+  58%,
+  88% {
+    opacity: 1;
+    clip-path: inset(57% 0 0 0);
+  }
+
+  97%,
+  100% {
+    opacity: 0;
+    clip-path: inset(57% 0 0 0);
+  }
+}
+
+.lowdim-data-layer {
+  z-index: 1;
+}
+
+.lowdim-people-layer {
+  z-index: 2;
+  opacity: 0;
+}
+
+.lowdim-pulled-layer {
+  z-index: 3;
+  opacity: 0;
+}
+
+.lowdim-arrow-layer {
+  z-index: 4;
+  opacity: 0;
+}
+
+.lowdim-manifold-layer {
+  z-index: 5;
+  opacity: 0;
+}
+
+.project-card.is-animating .lowdim-people-layer {
+  animation: lowdim-people-sequence 9s var(--ease-out) infinite both;
+}
+
+.project-card.is-animating .lowdim-pulled-layer {
+  animation: lowdim-pulled-sequence 9s var(--ease-out) infinite both;
+}
+
+.project-card.is-animating .lowdim-arrow-layer {
+  animation: lowdim-arrow-sequence 9s var(--ease-out) infinite both;
+}
+
+.project-card.is-animating .lowdim-manifold-layer {
+  animation: lowdim-manifold-sequence 9s var(--ease-out) infinite both;
+}
+
+@keyframes lowdim-people-sequence {
+  0% {
+    opacity: 0;
+  }
+
+  2% {
+    opacity: 0.2;
+  }
+
+  12%,
+  91% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes lowdim-pulled-sequence {
+  0%,
+  22% {
+    opacity: 0;
+  }
+
+  40%,
+  91% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes lowdim-arrow-sequence {
+  0%,
+  44% {
+    opacity: 0;
+  }
+
+  58%,
+  91% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes lowdim-manifold-sequence {
+  0%,
+  60% {
+    opacity: 0;
+  }
+
+  74%,
+  91% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 .project-sublist {
   margin: 0;
   padding: 0;
@@ -1406,6 +1621,22 @@ a:focus-visible,
   }
 }
 
+@media (hover: none) {
+  .geodesic-manifold-layer {
+    opacity: 1;
+    clip-path: inset(27% 0 0 0);
+  }
+
+  .geodesic-projection-layer {
+    opacity: 1;
+    clip-path: inset(57% 0 0 0);
+  }
+
+  .lowdim-manifold-layer {
+    opacity: 1;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -1431,5 +1662,19 @@ a:focus-visible,
     opacity: 1 !important;
     filter: none !important;
     transform: none !important;
+  }
+
+  .geodesic-manifold-layer {
+    opacity: 1 !important;
+    clip-path: inset(27% 0 0 0) !important;
+  }
+
+  .geodesic-projection-layer {
+    opacity: 1 !important;
+    clip-path: inset(57% 0 0 0) !important;
+  }
+
+  .lowdim-manifold-layer {
+    opacity: 1 !important;
   }
 }
