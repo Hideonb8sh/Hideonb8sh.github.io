@@ -1000,13 +1000,19 @@ main > .panel:nth-child(2) {
 }
 
 .project-visual-animated {
+  width: 100%;
+  max-width: 100%;
   aspect-ratio: 3 / 2;
+  align-self: start;
+  justify-self: stretch;
+  box-sizing: border-box;
 }
 
 .project-animation {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 2;
+  height: 100%;
+  aspect-ratio: auto;
   overflow: hidden;
   isolation: isolate;
   background:
