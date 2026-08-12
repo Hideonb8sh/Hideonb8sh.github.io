@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Articles, projects, and technical notes by Linglong Meng."
+      content="Projects and technical notes by Linglong Meng."
     />
     <meta name="theme-color" content="#07101d" />
     <meta property="og:title" content="Posts · Linglong Meng" />
     <meta
       property="og:description"
-      content="Articles, projects, and technical notes on mathematics and machine learning."
+      content="Projects and technical notes on mathematics and machine learning."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://hideonb8sh.github.io/posts.html" />
@@ -20,7 +20,7 @@
       content="https://hideonb8sh.github.io/assets/portrait.jpg"
     />
     <title>Posts · Linglong Meng</title>
-    <link rel="stylesheet" href="styles.css?v=20260811-7" />
+    <link rel="stylesheet" href="styles.css?v=20260811-10" />
   </head>
   <body id="top">
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -82,42 +82,48 @@
         </nav>
 
         <main id="main-content">
-          <section class="panel post-section" id="articles" aria-labelledby="articles-title">
-            <div
-              class="section-heading hover-dialog-card"
-              tabindex="0"
-              aria-describedby="articles-description"
-            >
-              <h2 class="panel-title" id="articles-title">Articles</h2>
-              <div class="hover-dialog" id="articles-description">
-                <p>
-                  Think of these as my learning notes: while reading papers and
-                  exploring research, I record my own thoughts and organize them
-                  into tutorial-style articles to share with others.
-                </p>
-              </div>
+          <section class="panel filter-panel" aria-labelledby="filter-title">
+            <div class="filter-heading">
+              <p class="filter-eyebrow">Browse by topic</p>
+              <h1 id="filter-title">Filter Projects</h1>
             </div>
-            <div class="post-list">
-              <article class="post-card hover-dialog-card" tabindex="0">
-                <h3>
-                  <a
-                    class="post-title-link"
-                    href="https://github.com/Hideonb8sh/geodesic-learning-dynamics-tutorial"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Geodesic Modeling of Low-Dimensional Learning Dynamics in
-                    Deep Neural Networks
-                  </a>
-                </h3>
-                <div class="hover-dialog">
-                  <p class="post-summary">
-                    A technical article on when low-dimensional structures in
-                    deep neural networks form identifiable, geometrically simple
-                    trajectories.
-                  </p>
-                </div>
-              </article>
+            <div
+              class="filter-controls"
+              role="group"
+              aria-label="Filter projects by topic"
+            >
+              <button
+                class="filter-button is-active"
+                type="button"
+                data-filter="all"
+                aria-pressed="true"
+              >
+                All
+              </button>
+              <button
+                class="filter-button"
+                type="button"
+                data-filter="optimization"
+                aria-pressed="false"
+              >
+                Optimization in Deep Learning
+              </button>
+              <button
+                class="filter-button"
+                type="button"
+                data-filter="representation"
+                aria-pressed="false"
+              >
+                Representation
+              </button>
+              <button
+                class="filter-button"
+                type="button"
+                data-filter="generative"
+                aria-pressed="false"
+              >
+                Generative Models
+              </button>
             </div>
           </section>
 
@@ -142,11 +148,60 @@
               </div>
             </div>
             <div class="post-list">
-              <article class="post-card project-card project-feature-card">
+              <article
+                class="post-card project-card project-feature-card project-single-entry-card"
+                data-category="optimization"
+              >
+                <h3 class="project-feature-title">
+                  Geodesic Modeling of Low-Dimensional Learning Dynamics in
+                  Deep Neural Networks
+                </h3>
+                <div class="project-feature-copy">
+                  <p class="project-category-label">
+                    Optimization in Deep Learning
+                  </p>
+                  <ul class="project-sublist">
+                    <li class="hover-dialog-card" tabindex="0">
+                      <h4>
+                        <a
+                          class="project-link"
+                          href="https://github.com/Hideonb8sh/geodesic-learning-dynamics-tutorial"
+                          target="_blank"
+                          rel="noreferrer"
+                          >Tutorial Article</a
+                        >
+                      </h4>
+                      <div class="hover-dialog">
+                        <p>
+                          A technical article on when low-dimensional structures
+                          in deep neural networks form identifiable,
+                          geometrically simple trajectories.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <figure class="project-visual">
+                  <img
+                    src="assets/geodesic-learning-dynamics-cover-v12.png"
+                    alt="A circuit-like neural network projected onto a Grassmann-style manifold"
+                    width="1536"
+                    height="1024"
+                    loading="eager"
+                  />
+                </figure>
+              </article>
+
+              <article
+                class="post-card project-card project-feature-card"
+                data-category="representation"
+              >
                 <h3 class="project-feature-title">
                   Low-Dimensional Representations with Heteroscedastic Data
                 </h3>
                 <div class="project-feature-copy">
+                  <p class="project-category-label">Representation</p>
                   <ul class="project-sublist">
                     <li class="hover-dialog-card" tabindex="0">
                       <h4>
@@ -198,6 +253,10 @@
                   />
                 </figure>
               </article>
+
+              <p class="filter-empty" role="status" hidden>
+                No projects in this category yet.
+              </p>
             </div>
           </section>
         </main>
@@ -208,5 +267,6 @@
       <p>Linglong Meng</p>
       <a href="index.html">Back to home</a>
     </footer>
+    <script src="posts.js?v=20260811-1"></script>
   </body>
 </html>
