@@ -20,7 +20,7 @@
       content="https://hideonb8sh.github.io/assets/portrait.jpg"
     />
     <title>Posts · Linglong Meng</title>
-    <link rel="stylesheet" href="styles.css?v=20260811-17" />
+    <link rel="stylesheet" href="styles.css?v=20260812-19" />
   </head>
   <body id="top">
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -106,7 +106,7 @@
                 data-filter="optimization"
                 aria-pressed="false"
               >
-                Optimization in Deep Learning
+                Optimization
               </button>
               <button
                 class="filter-button"
@@ -114,15 +114,23 @@
                 data-filter="representation"
                 aria-pressed="false"
               >
-                Low-Dimensional Representation
+                Representation
               </button>
               <button
                 class="filter-button"
                 type="button"
-                data-filter="generative"
+                data-filter="interpretability"
                 aria-pressed="false"
               >
-                Generative Models
+                Interpretability
+              </button>
+              <button
+                class="filter-button"
+                type="button"
+                data-filter="gen-model"
+                aria-pressed="false"
+              >
+                Gen Model
               </button>
             </div>
           </section>
@@ -158,7 +166,7 @@
                 </h3>
                 <div class="project-feature-copy">
                   <p class="project-category-label">
-                    Optimization in Deep Learning
+                    Optimization
                   </p>
                   <ul class="project-sublist">
                     <li class="hover-dialog-card" tabindex="0">
@@ -239,7 +247,7 @@
                 </h3>
                 <div class="project-feature-copy">
                   <p class="project-category-label">
-                    Low-Dimensional Representation
+                    Representation
                   </p>
                   <ul class="project-sublist">
                     <li class="hover-dialog-card" tabindex="0">
@@ -338,21 +346,88 @@
               </article>
 
               <article
+                class="post-card project-card project-feature-card mae-project-card"
+                data-category="representation interpretability"
+              >
+                <h3 class="project-feature-title">
+                  <a
+                    class="project-title-link"
+                    href="https://github.com/Hideonb8sh/masked-training"
+                    target="_blank"
+                    rel="noreferrer"
+                    >What Is Masked Autoencoder Doing? A Subspace Perspective</a
+                  >
+                </h3>
+                <div class="project-feature-copy mae-project-copy">
+                  <div class="project-category-labels" aria-label="Categories">
+                    <p class="project-category-label">Representation</p>
+                    <p class="project-category-label">Interpretability</p>
+                  </div>
+                </div>
+
+                <figure class="project-visual project-visual-animated">
+                  <img
+                    src="assets/mae-subspace-perspective-cover-v4.png"
+                    alt="Three colored basis subspaces combined into a shared span for reconstructing masked image patches"
+                    width="1536"
+                    height="1024"
+                    loading="lazy"
+                  />
+                </figure>
+              </article>
+
+              <article
                 class="post-card project-card project-compact-card"
-                data-category="representation"
+                data-category="gen-model interpretability representation"
               >
                 <h3>
-                  What Is Masked Autoencoder Doing? A Subspace Perspective
+                  <a
+                    class="project-title-link"
+                    href="https://github.com/Hideonb8sh/diffusion-dictionary-learning"
+                    target="_blank"
+                    rel="noreferrer"
+                    >When Diffusion Models Do Dictionary Learning?</a
+                  >
                 </h3>
-                <p class="project-category-label">
-                  Low-Dimensional Representation
-                </p>
+                <div class="project-category-labels" aria-label="Categories">
+                  <p class="project-category-label">Gen Model</p>
+                  <p class="project-category-label">Interpretability</p>
+                  <p class="project-category-label">Representation</p>
+                </div>
+              </article>
+
+              <article
+                class="post-card project-card project-compact-card"
+                data-category="interpretability gen-model"
+              >
+                <h3>Why LMs Can Do Formal Proofs?</h3>
+                <div class="project-category-labels" aria-label="Categories">
+                  <p class="project-category-label">Interpretability</p>
+                  <p class="project-category-label">Gen Model</p>
+                </div>
               </article>
 
               <p class="filter-empty" role="status" hidden>
                 No projects in this category yet.
               </p>
             </div>
+            <nav class="project-pagination" aria-label="Project pages" hidden>
+              <button
+                class="pagination-button pagination-previous"
+                type="button"
+                aria-label="Previous project page"
+              >
+                Previous
+              </button>
+              <div class="pagination-pages" aria-label="Page numbers"></div>
+              <button
+                class="pagination-button pagination-next"
+                type="button"
+                aria-label="Next project page"
+              >
+                Next
+              </button>
+            </nav>
           </section>
         </main>
       </div>
@@ -362,6 +437,6 @@
       <p>Linglong Meng</p>
       <a href="index.html">Back to home</a>
     </footer>
-    <script src="posts.js?v=20260811-2"></script>
+    <script src="posts.js?v=20260812-4"></script>
   </body>
 </html>

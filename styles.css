@@ -909,6 +909,61 @@ main > .panel:nth-child(2) {
   line-height: 1.25;
 }
 
+.project-compact-card > .project-category-labels {
+  justify-content: flex-start;
+}
+
+.project-pagination {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+}
+
+.project-pagination[hidden] {
+  display: none;
+}
+
+.pagination-pages {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.pagination-button {
+  min-width: 38px;
+  min-height: 38px;
+  padding: 0.52rem 0.78rem;
+  color: var(--ink-faint);
+  background: rgba(16, 29, 48, 0.78);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.7rem;
+  font-weight: 650;
+  cursor: pointer;
+  transition:
+    color 220ms ease,
+    background 260ms ease,
+    border-color 260ms ease,
+    transform 260ms var(--ease-out);
+}
+
+.pagination-button:hover:not(:disabled),
+.pagination-button:focus-visible,
+.pagination-button.is-active {
+  color: #fff;
+  background: var(--blue-soft);
+  border-color: rgba(168, 213, 255, 0.42);
+  transform: translateY(-1px);
+}
+
+.pagination-button:disabled {
+  opacity: 0.38;
+  cursor: default;
+}
+
 .project-card > h3 {
   margin-bottom: 1rem;
   color: #e8eff8;
@@ -967,6 +1022,21 @@ main > .panel:nth-child(2) {
   text-transform: uppercase;
 }
 
+.project-category-labels {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.project-category-labels .project-category-label {
+  margin-bottom: 0;
+}
+
+.mae-project-copy {
+  justify-content: flex-start;
+}
+
 .project-feature-title {
   grid-area: title;
   margin: 0;
@@ -976,6 +1046,22 @@ main > .panel:nth-child(2) {
   font-weight: 660;
   line-height: 1.48;
   text-wrap: balance;
+}
+
+.project-title-link {
+  color: inherit;
+  text-decoration: none;
+  text-decoration-color: rgba(168, 213, 255, 0.68);
+  text-underline-offset: 4px;
+  transition:
+    color 220ms ease,
+    text-decoration-color 220ms ease;
+}
+
+.project-title-link:hover,
+.project-title-link:focus-visible {
+  color: #fff;
+  text-decoration: underline;
 }
 
 .project-feature-card .project-sublist {
