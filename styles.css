@@ -1168,79 +1168,144 @@ main > .panel:nth-child(2) {
 .project-feature-card:hover .project-animation .animation-layer,
 .project-feature-card:focus-within .project-animation .animation-layer {
   filter: none;
+  transform: none;
 }
 
-.geodesic-network-layer {
+.geodesic-landscape-base {
   z-index: 1;
+  clip-path: inset(0 50% 0 0);
 }
 
-.geodesic-manifold-layer {
+.geodesic-manifold-base {
   z-index: 2;
   opacity: 0;
-  clip-path: inset(100% 0 0 0);
+  clip-path: inset(0 48% 0 52%);
 }
 
-.geodesic-projection-layer {
+.geodesic-motion-layer {
+  position: absolute;
   z-index: 3;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.geodesic-drawn-path,
+.geodesic-map-arrow path {
+  fill: none;
+  stroke: #07101b;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.geodesic-drawn-path {
+  stroke-width: 7;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.geodesic-point {
+  fill: #07101b;
   opacity: 0;
-  clip-path: inset(57% 0 0 0);
+  transform-box: fill-box;
+  transform-origin: center;
 }
 
-.project-card.is-animating .geodesic-manifold-layer {
-  animation: geodesic-manifold-sequence 8.4s var(--ease-out) infinite both;
+.geodesic-map-arrow {
+  color: #f4c94c;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
 }
 
-.project-card.is-animating .geodesic-projection-layer {
-  animation: geodesic-projection-sequence 8.4s var(--ease-out) infinite both;
+.geodesic-map-arrow path {
+  stroke: currentColor;
+  stroke-width: 8;
 }
 
-@keyframes geodesic-manifold-sequence {
-  0% {
-    opacity: 0;
-    clip-path: inset(100% 0 0 0);
-  }
-
-  2% {
-    opacity: 0.24;
-    clip-path: inset(98% 0 0 0);
-  }
-
-  12% {
-    opacity: 1;
-    clip-path: inset(82% 0 0 0);
-  }
-
-  36%,
-  88% {
-    opacity: 1;
-    clip-path: inset(27% 0 0 0);
-  }
-
-  97%,
-  100% {
-    opacity: 0;
-    clip-path: inset(27% 0 0 0);
-  }
+.project-card.is-animating .geodesic-landscape-path {
+  animation: geodesic-left-path 7.2s linear infinite both;
 }
 
-@keyframes geodesic-projection-sequence {
-  0%,
-  40% {
-    opacity: 0;
-    clip-path: inset(82% 0 0 0);
-  }
+.project-card.is-animating .geodesic-landscape-start {
+  animation: geodesic-left-start 7.2s ease infinite both;
+}
 
-  58%,
-  88% {
-    opacity: 1;
-    clip-path: inset(57% 0 0 0);
-  }
+.project-card.is-animating .geodesic-landscape-end {
+  animation: geodesic-left-end 7.2s ease infinite both;
+}
 
-  97%,
-  100% {
-    opacity: 0;
-    clip-path: inset(57% 0 0 0);
-  }
+.project-card.is-animating .geodesic-map-arrow {
+  animation: geodesic-arrow-sequence 7.2s var(--ease-out) infinite both;
+}
+
+.project-card.is-animating .geodesic-manifold-base {
+  animation: geodesic-manifold-reveal 7.2s var(--ease-out) infinite both;
+}
+
+.project-card.is-animating .geodesic-manifold-path {
+  animation: geodesic-right-path 7.2s linear infinite both;
+}
+
+.project-card.is-animating .geodesic-manifold-start {
+  animation: geodesic-right-start 7.2s ease infinite both;
+}
+
+.project-card.is-animating .geodesic-manifold-end {
+  animation: geodesic-right-end 7.2s ease infinite both;
+}
+
+@keyframes geodesic-left-path {
+  0%, 2% { opacity: 0; stroke-dashoffset: 1; }
+  4% { opacity: 1; stroke-dashoffset: 1; }
+  29%, 95% { opacity: 1; stroke-dashoffset: 0; }
+  100% { opacity: 0; stroke-dashoffset: 0; }
+}
+
+@keyframes geodesic-left-start {
+  0%, 2% { opacity: 0; transform: scale(0.5); }
+  4%, 95% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1); }
+}
+
+@keyframes geodesic-left-end {
+  0%, 27% { opacity: 0; transform: scale(0.5); }
+  30%, 95% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1); }
+}
+
+@keyframes geodesic-arrow-sequence {
+  0%, 33% { opacity: 0; transform: translateX(-12px) scale(0.9); }
+  41%, 95% { opacity: 1; transform: translateX(0) scale(1); }
+  100% { opacity: 0; transform: translateX(0) scale(1); }
+}
+
+@keyframes geodesic-manifold-reveal {
+  0%, 43% { opacity: 0; clip-path: inset(0 48% 0 52%); }
+  63%, 95% { opacity: 1; clip-path: inset(0 0 0 52%); }
+  100% { opacity: 0; clip-path: inset(0 0 0 52%); }
+}
+
+@keyframes geodesic-right-path {
+  0%, 65% { opacity: 0; stroke-dashoffset: 1; }
+  67% { opacity: 1; stroke-dashoffset: 1; }
+  91%, 95% { opacity: 1; stroke-dashoffset: 0; }
+  100% { opacity: 0; stroke-dashoffset: 0; }
+}
+
+@keyframes geodesic-right-start {
+  0%, 65% { opacity: 0; transform: scale(0.5); }
+  67%, 95% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1); }
+}
+
+@keyframes geodesic-right-end {
+  0%, 89% { opacity: 0; transform: scale(0.5); }
+  92%, 95% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1); }
 }
 
 .lowdim-data-layer {
@@ -1758,14 +1823,19 @@ a:focus-visible,
 }
 
 @media (hover: none) {
-  .geodesic-manifold-layer {
+  .geodesic-manifold-base {
     opacity: 1;
-    clip-path: inset(27% 0 0 0);
+    clip-path: inset(0 0 0 52%);
   }
 
-  .geodesic-projection-layer {
+  .geodesic-drawn-path {
     opacity: 1;
-    clip-path: inset(57% 0 0 0);
+    stroke-dashoffset: 0;
+  }
+
+  .geodesic-point,
+  .geodesic-map-arrow {
+    opacity: 1;
   }
 
   .lowdim-manifold-layer {
@@ -1800,14 +1870,20 @@ a:focus-visible,
     transform: none !important;
   }
 
-  .geodesic-manifold-layer {
+  .geodesic-manifold-base {
     opacity: 1 !important;
-    clip-path: inset(27% 0 0 0) !important;
+    clip-path: inset(0 0 0 52%) !important;
   }
 
-  .geodesic-projection-layer {
+  .geodesic-drawn-path {
     opacity: 1 !important;
-    clip-path: inset(57% 0 0 0) !important;
+    stroke-dashoffset: 0 !important;
+  }
+
+  .geodesic-point,
+  .geodesic-map-arrow {
+    opacity: 1 !important;
+    transform: none !important;
   }
 
   .lowdim-manifold-layer {

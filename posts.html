@@ -20,7 +20,7 @@
       content="https://hideonb8sh.github.io/assets/portrait.jpg"
     />
     <title>Posts · Linglong Meng</title>
-    <link rel="stylesheet" href="styles.css?v=20260812-19" />
+    <link rel="stylesheet" href="styles.css?v=20260812-20" />
   </head>
   <body id="top">
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -202,13 +202,74 @@
                 </div>
 
                 <figure class="project-visual project-visual-animated">
-                  <img
-                    src="assets/geodesic-landscape-to-manifold-cover.png"
-                    alt="An optimization trajectory on a nonconvex loss landscape mapped to a geodesic on a smooth manifold"
-                    width="1536"
-                    height="1024"
-                    loading="eager"
-                  />
+                  <div
+                    class="project-animation geodesic-sequence"
+                    role="img"
+                    aria-label="An optimization path is traced across a loss landscape, followed by a mapping arrow, a smooth manifold, and a geodesic traced across the manifold"
+                  >
+                    <img
+                      class="animation-layer geodesic-landscape-base"
+                      src="assets/geodesic-landscape-manifold-base-v2.png"
+                      alt=""
+                      width="1536"
+                      height="1024"
+                      loading="eager"
+                      aria-hidden="true"
+                    />
+                    <img
+                      class="animation-layer geodesic-manifold-base"
+                      src="assets/geodesic-landscape-manifold-base-v2.png"
+                      alt=""
+                      width="1536"
+                      height="1024"
+                      loading="eager"
+                      aria-hidden="true"
+                    />
+                    <svg
+                      class="geodesic-motion-layer"
+                      viewBox="0 0 1536 1024"
+                      aria-hidden="true"
+                    >
+                      <path
+                        class="geodesic-drawn-path geodesic-landscape-path"
+                        pathLength="1"
+                        d="M 393 309 C 429 354, 518 372, 560 414 C 602 456, 600 504, 560 535 C 523 564, 488 557, 466 588 C 447 615, 428 628, 409 618"
+                      />
+                      <circle
+                        class="geodesic-point geodesic-landscape-start"
+                        cx="393"
+                        cy="309"
+                        r="10"
+                      />
+                      <circle
+                        class="geodesic-point geodesic-landscape-end"
+                        cx="409"
+                        cy="618"
+                        r="10"
+                      />
+                      <g class="geodesic-map-arrow">
+                        <path d="M 746 539 C 769 535, 793 535, 817 539" />
+                        <path d="M 807 522 L 832 539 L 807 556" />
+                      </g>
+                      <path
+                        class="geodesic-drawn-path geodesic-manifold-path"
+                        pathLength="1"
+                        d="M 1074 445 C 1137 444, 1183 476, 1207 529 C 1233 588, 1276 625, 1348 655"
+                      />
+                      <circle
+                        class="geodesic-point geodesic-manifold-start"
+                        cx="1074"
+                        cy="445"
+                        r="10"
+                      />
+                      <circle
+                        class="geodesic-point geodesic-manifold-end"
+                        cx="1348"
+                        cy="655"
+                        r="10"
+                      />
+                    </svg>
+                  </div>
                 </figure>
               </article>
 
