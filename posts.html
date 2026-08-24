@@ -7,7 +7,7 @@
       name="description"
       content="Projects and technical notes by Linglong Meng."
     />
-    <meta name="theme-color" content="#07101d" />
+    <meta name="theme-color" content="#ffffff" />
     <meta property="og:title" content="Posts · Linglong Meng" />
     <meta
       property="og:description"
@@ -20,59 +20,13 @@
       content="https://hideonb8sh.github.io/assets/portrait.jpg"
     />
     <title>Posts · Linglong Meng</title>
-    <link rel="stylesheet" href="styles.css?v=20260812-20" />
+    <link rel="stylesheet" href="styles.css?v=20260823-1" />
   </head>
-  <body id="top">
+  <body class="posts-page" id="top">
     <a class="skip-link" href="#main-content">Skip to content</a>
 
     <div class="page-shell">
-      <div class="profile-column">
-        <aside class="profile-card" aria-label="Linglong Meng profile">
-          <div class="portrait-frame">
-            <img
-              src="assets/portrait.jpg"
-              alt="Claude Shannon statue and Linglong Meng outside the EECS Building"
-              width="1361"
-              height="1800"
-            />
-          </div>
-
-          <p class="portrait-caption">
-            Claude Shannon’s statue (left) and Linglong Meng (right), outside
-            Michigan’s EECS Building, May 2026.
-          </p>
-          <p class="profile-quote">
-            『We know the past but cannot control it, we control the future but
-            cannot know it.』
-          </p>
-          <div class="profile-links" aria-label="Contact links">
-            <a
-              class="profile-icon-link github-link"
-              href="https://github.com/Hideonb8sh"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Linglong Meng on GitHub"
-              title="GitHub"
-            >
-              <span
-                class="profile-icon profile-icon-github"
-                aria-hidden="true"
-              ></span>
-            </a>
-            <a
-              class="profile-icon-link email-link"
-              href="mailto:linglong@umich.edu"
-              aria-label="Email Linglong Meng at linglong@umich.edu"
-              title="linglong@umich.edu"
-            >
-              <span
-                class="profile-icon profile-icon-mail"
-                aria-hidden="true"
-              ></span>
-            </a>
-          </div>
-        </aside>
-      </div>
+      <div class="profile-column" aria-hidden="true"></div>
 
       <div class="main-column">
         <nav class="site-nav" aria-label="Primary navigation">
@@ -84,8 +38,8 @@
         <main id="main-content">
           <section class="panel filter-panel" aria-labelledby="filter-title">
             <div class="filter-heading">
-              <p class="filter-eyebrow">Browse by topic</p>
-              <h1 id="filter-title">Filter Projects</h1>
+              <p class="section-label">Research notes &amp; code</p>
+              <h1 id="filter-title">Projects</h1>
             </div>
             <div
               class="filter-controls"
@@ -108,30 +62,6 @@
               >
                 Optimization
               </button>
-              <button
-                class="filter-button"
-                type="button"
-                data-filter="representation"
-                aria-pressed="false"
-              >
-                Representation
-              </button>
-              <button
-                class="filter-button"
-                type="button"
-                data-filter="interpretability"
-                aria-pressed="false"
-              >
-                Interpretability
-              </button>
-              <button
-                class="filter-button"
-                type="button"
-                data-filter="gen-model"
-                aria-pressed="false"
-              >
-                Gen Model
-              </button>
             </div>
           </section>
 
@@ -145,16 +75,15 @@
               tabindex="0"
               aria-describedby="projects-description"
             >
-              <h2 class="panel-title" id="projects-title">Projects</h2>
+              <h2 class="panel-title" id="projects-title">Selected work</h2>
               <div class="hover-dialog" id="projects-description">
                 <p>
-                  These are small research projects I have completed, ranging
-                  from simple algorithms to interesting questions I want to
-                  explore. Some develop ideas I may later turn into articles;
-                  each entry provides reproducible code you can inspect and run.
+                  Research projects, technical notes, and reproducible code on
+                  mathematical questions in modern machine learning.
                 </p>
               </div>
             </div>
+
             <div class="post-list">
               <article
                 class="post-card project-card project-feature-card"
@@ -165,9 +94,7 @@
                   Deep Neural Networks
                 </h3>
                 <div class="project-feature-copy">
-                  <p class="project-category-label">
-                    Optimization
-                  </p>
+                  <p class="project-category-label">Optimization</p>
                   <ul class="project-sublist">
                     <li class="hover-dialog-card" tabindex="0">
                       <h4>
@@ -273,179 +200,11 @@
                 </figure>
               </article>
 
-              <article
-                class="post-card project-card project-feature-card"
-                data-category="representation"
-              >
-                <h3 class="project-feature-title">
-                  Low-Dimensional Representations with Heteroscedastic Data
-                </h3>
-                <div class="project-feature-copy">
-                  <p class="project-category-label">
-                    Representation
-                  </p>
-                  <ul class="project-sublist">
-                    <li class="hover-dialog-card" tabindex="0">
-                      <h4>
-                        <a
-                          class="project-link"
-                          href="https://github.com/Hideonb8sh/heteroscedastic_transform_learning"
-                          target="_blank"
-                          rel="noreferrer"
-                          >Transform Learning</a
-                        >
-                      </h4>
-                      <div class="hover-dialog">
-                        <p>
-                          Adapts sparse-coding thresholds and transform-learning
-                          weights to each patch’s known noise variance, using
-                          softened precision weighting so a few clean patches do
-                          not dominate.
-                        </p>
-                      </div>
-                    </li>
-                    <li class="hover-dialog-card" tabindex="0">
-                      <h4>
-                        <a
-                          class="project-link"
-                          href="https://github.com/Hideonb8sh/probabilistic_nearest_neighbor_graph_recovery"
-                          target="_blank"
-                          rel="noreferrer"
-                          >Probabilistic Nearest-Neighbor Graph Recovery</a
-                        >
-                      </h4>
-                      <div class="hover-dialog">
-                        <p>
-                          Uses probabilistic modeling to recover nearest-neighbor
-                          graph structure from observations with unequal noise
-                          levels.
-                        </p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-
-                <figure class="project-visual project-visual-animated">
-                  <div
-                    class="project-animation lowdim-sequence"
-                    role="img"
-                    aria-label="Two figures pull apart tangled high-dimensional data before it is mapped onto a low-dimensional manifold"
-                  >
-                    <img
-                      class="animation-layer lowdim-data-layer"
-                      src="assets/lowdim-animation-data.jpg"
-                      alt=""
-                      width="1536"
-                      height="1024"
-                      loading="lazy"
-                      aria-hidden="true"
-                    />
-                    <img
-                      class="animation-layer lowdim-people-layer"
-                      src="assets/lowdim-animation-people.jpg"
-                      alt=""
-                      width="1536"
-                      height="1024"
-                      loading="lazy"
-                      aria-hidden="true"
-                    />
-                    <img
-                      class="animation-layer lowdim-pulled-layer"
-                      src="assets/lowdim-animation-pulled.jpg"
-                      alt=""
-                      width="1536"
-                      height="1024"
-                      loading="lazy"
-                      aria-hidden="true"
-                    />
-                    <img
-                      class="animation-layer lowdim-arrow-layer"
-                      src="assets/lowdim-animation-arrow.jpg"
-                      alt=""
-                      width="1536"
-                      height="1024"
-                      loading="lazy"
-                      aria-hidden="true"
-                    />
-                    <img
-                      class="animation-layer lowdim-manifold-layer"
-                      src="assets/lowdim-animation-manifold.jpg"
-                      alt=""
-                      width="1536"
-                      height="1024"
-                      loading="lazy"
-                      aria-hidden="true"
-                    />
-                  </div>
-                </figure>
-              </article>
-
-              <article
-                class="post-card project-card project-feature-card mae-project-card"
-                data-category="representation interpretability"
-              >
-                <h3 class="project-feature-title">
-                  <a
-                    class="project-title-link"
-                    href="https://github.com/Hideonb8sh/masked-training"
-                    target="_blank"
-                    rel="noreferrer"
-                    >What Is Masked Autoencoder Doing? A Subspace Perspective</a
-                  >
-                </h3>
-                <div class="project-feature-copy mae-project-copy">
-                  <div class="project-category-labels" aria-label="Categories">
-                    <p class="project-category-label">Representation</p>
-                    <p class="project-category-label">Interpretability</p>
-                  </div>
-                </div>
-
-                <figure class="project-visual project-visual-animated">
-                  <img
-                    src="assets/mae-subspace-perspective-cover-v4.png"
-                    alt="Three colored basis subspaces combined into a shared span for reconstructing masked image patches"
-                    width="1536"
-                    height="1024"
-                    loading="lazy"
-                  />
-                </figure>
-              </article>
-
-              <article
-                class="post-card project-card project-compact-card"
-                data-category="gen-model interpretability representation"
-              >
-                <h3>
-                  <a
-                    class="project-title-link"
-                    href="https://github.com/Hideonb8sh/diffusion-dictionary-learning"
-                    target="_blank"
-                    rel="noreferrer"
-                    >When Diffusion Models Do Dictionary Learning?</a
-                  >
-                </h3>
-                <div class="project-category-labels" aria-label="Categories">
-                  <p class="project-category-label">Gen Model</p>
-                  <p class="project-category-label">Interpretability</p>
-                  <p class="project-category-label">Representation</p>
-                </div>
-              </article>
-
-              <article
-                class="post-card project-card project-compact-card"
-                data-category="interpretability gen-model"
-              >
-                <h3>Why LMs Can Do Formal Proofs?</h3>
-                <div class="project-category-labels" aria-label="Categories">
-                  <p class="project-category-label">Interpretability</p>
-                  <p class="project-category-label">Gen Model</p>
-                </div>
-              </article>
-
               <p class="filter-empty" role="status" hidden>
                 No projects in this category yet.
               </p>
             </div>
+
             <nav class="project-pagination" aria-label="Project pages" hidden>
               <button
                 class="pagination-button pagination-previous"
