@@ -10,7 +10,8 @@
   --surface: #f6f7f8;
   --paper: #ffffff;
   --yellow: #d49a25;
-  --font: Arial, Helvetica, "Noto Sans", sans-serif;
+  --font: "Lato", Verdana, Helvetica, "PingFang SC", "Noto Sans CJK SC",
+    sans-serif;
   --serif: Georgia, "Times New Roman", serif;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -24,8 +25,8 @@ body {
   color: var(--text);
   background: var(--paper);
   font-family: var(--font);
-  font-size: 15px;
-  line-height: 1.48;
+  font-size: 14px;
+  line-height: 1.35;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -59,7 +60,7 @@ a:focus-visible, button:focus-visible, [tabindex="0"]:focus-visible { outline: 2
   margin-bottom: 46px;
   padding-bottom: 12px;
   border-bottom: 1px solid var(--line);
-  font-size: 0.9rem;
+  font-size: 14px;
 }
 
 .site-nav a { color: var(--muted); }
@@ -86,14 +87,15 @@ a:focus-visible, button:focus-visible, [tabindex="0"]:focus-visible { outline: 2
   line-height: 1.15;
 }
 
-.hero-title { font-size: clamp(2.15rem, 5vw, 3rem); }
-.panel-title, .filter-heading h1 { font-size: 1.55rem; }
+.hero-title { font-size: 32px; }
+.panel-title, .filter-heading h1 { font-size: 22px; }
 
 .about-copy p, .research-origin, .research-intro, .news-item p { margin: 0 0 14px; }
-.about-copy .intro-line { font-size: 1.02rem; }
+.about-copy .intro-line { font-size: 14px; }
 .person-name, .chinese-name { font-weight: 700; }
 .person-link { color: var(--blue); font-weight: 600; }
 .institution-link, .lab-link { color: var(--blue); }
+.lab-name { color: var(--text); }
 
 /* Home */
 .home-page .page-shell {
@@ -186,7 +188,7 @@ a:focus-visible, button:focus-visible, [tabindex="0"]:focus-visible { outline: 2
   margin-bottom: 44px;
 }
 
-.filter-heading h1 { margin-bottom: 0; font-size: clamp(2rem, 5vw, 2.65rem); }
+.filter-heading h1 { margin-bottom: 0; font-size: 32px; }
 .filter-controls { display: flex; flex-wrap: nowrap; justify-content: flex-end; gap: 6px; overflow-x: auto; }
 
 .filter-button, .pagination-button {
@@ -219,7 +221,7 @@ a:focus-visible, button:focus-visible, [tabindex="0"]:focus-visible { outline: 2
   grid-area: title;
   margin: 0;
   color: var(--text);
-  font-size: 1.18rem;
+  font-size: 16px;
   font-weight: 600;
   line-height: 1.35;
 }
