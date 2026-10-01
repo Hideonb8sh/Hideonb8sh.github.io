@@ -26,7 +26,7 @@
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260824-1" />
+    <link rel="stylesheet" href="styles.css?v=20260930-1" />
   </head>
   <body class="home-page" id="top">
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -48,8 +48,8 @@
             Michigan’s EECS Building, May 2026.
           </p>
           <p class="profile-quote">
-            『We know the past but cannot control it, we control the future but
-            cannot know it.』
+            <span>『We know the past but cannot control it,</span>
+            <span>we control the future but cannot know it.』</span>
           </p>
           <div class="profile-links" aria-label="Contact links">
             <a
@@ -147,8 +147,20 @@
           <section class="panel news-panel" id="news" aria-labelledby="news-title">
             <h2 class="panel-title" id="news-title">News</h2>
             <div class="news-item">
-              <span class="news-label">Updates</span>
-              <p>News will appear here.</p>
+              <time class="news-label" datetime="2026-10">2026/10</time>
+              <p>
+                I will present our work on how heterogeneity affects representations
+                in transform learning and how to perform reliable heteroscedastic
+                modeling at the 2026 Michigan AI Symposium. Welcome to our poster!
+              </p>
+            </div>
+            <div class="news-item">
+              <time class="news-label" datetime="2026-10">2026/10</time>
+              <p>
+                I will present our work on what diffusion models do in low-noise
+                stages, from a sparse-coding perspective, at DeepMath 2026.
+                Welcome to our poster, and see you in Columbus!
+              </p>
             </div>
           </section>
 
@@ -173,37 +185,29 @@
 
             <ol class="research-list">
               <li class="hover-dialog-card" tabindex="0">
-                <h3>Low-Dimensional Structures</h3>
+                <h3>Dynamics</h3>
                 <div class="hover-dialog">
                   <p>
-                    I study different forms of low-rank structure that emerge during
-                    model training and adaptation, with reference to this
-                    <a
-                      href="https://ieeexplore.ieee.org/document/11561030"
-                      target="_blank"
-                      rel="noreferrer"
-                      >IEEE Signal Processing Magazine article</a
-                    >.
+                    Dynamics in training of deep neural networks, and some modern
+                    optimization problems.
                   </p>
                 </div>
               </li>
               <li class="hover-dialog-card" tabindex="0">
-                <h3>Generative Model Theory</h3>
+                <h3>Representations</h3>
                 <div class="hover-dialog">
                   <p>
-                    I investigate mathematical and mechanistic explanations for
-                    diffusion models and large language models.
+                    Both sparse representations like classical dictionary learning
+                    and transform learning, and deep representation learning.
                   </p>
                 </div>
               </li>
               <li class="hover-dialog-card" tabindex="0">
-                <h3>Modern Optimization</h3>
+                <h3>Reasonings</h3>
                 <div class="hover-dialog">
                   <p>
-                    I am especially interested in Riemannian optimization methods such
-                    as geodesic modeling and in optimization dynamics for deep learning.
-                    My goal is to understand and explain the nature of overparameterization
-                    in deep learning.
+                    Especially how language models learn, and form the way to do
+                    reasonings.
                   </p>
                 </div>
               </li>

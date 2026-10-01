@@ -126,10 +126,12 @@ a:focus-visible, button:focus-visible, [tabindex="0"]:focus-visible { outline: 2
   margin: 18px 0 12px;
   color: #3f4349;
   font-family: var(--serif);
-  font-size: 0.82rem;
+  font-size: 0.75rem;
   font-style: italic;
   line-height: 1.5;
 }
+
+.profile-quote span { display: block; white-space: nowrap; }
 
 .profile-links { display: flex; justify-content: center; gap: 12px; }
 .profile-icon-link { width: 28px; height: 28px; display: grid; place-items: center; color: var(--muted); border: 1px solid var(--line-strong); border-radius: 50%; }
@@ -162,6 +164,7 @@ a:focus-visible, button:focus-visible, [tabindex="0"]:focus-visible { outline: 2
 }
 
 .news-label { flex: 0 0 auto; color: var(--muted); font-size: 0.78rem; }
+.news-item + .news-item { border-top: 0; }
 .news-item p { margin: 0; }
 .research-origin { max-width: 64ch; }
 .research-intro { color: var(--muted); }
