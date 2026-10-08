@@ -26,7 +26,7 @@
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20261008-1" />
+    <link rel="stylesheet" href="styles.css?v=20261008-2" />
   </head>
   <body class="posts-page" id="top">
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -42,181 +42,8 @@
         </nav>
 
         <main id="main-content">
-          <section class="panel filter-panel" aria-labelledby="filter-title">
-            <div class="filter-heading">
-              <p class="section-label">Research notes &amp; code</p>
-              <h1 id="filter-title">Projects</h1>
-            </div>
-            <div
-              class="filter-controls"
-              role="group"
-              aria-label="Filter projects by topic"
-            >
-              <button
-                class="filter-button is-active"
-                type="button"
-                data-filter="all"
-                aria-pressed="true"
-              >
-                All
-              </button>
-              <button
-                class="filter-button"
-                type="button"
-                data-filter="dynamics"
-                aria-pressed="false"
-              >
-                Dynamics
-              </button>
-            </div>
-          </section>
-
-          <section
-            class="post-section projects-section-bare"
-            id="projects"
-            aria-labelledby="projects-title"
-          >
-            <div
-              class="section-heading hover-dialog-card"
-              tabindex="0"
-              aria-describedby="projects-description"
-            >
-              <h2 class="panel-title" id="projects-title">Selected work</h2>
-              <div class="hover-dialog" id="projects-description">
-                <p>
-                  Research projects, technical notes, and reproducible code on
-                  mathematical questions in modern machine learning.
-                </p>
-              </div>
-            </div>
-
-            <div class="post-list">
-              <article
-                class="post-card project-card project-feature-card"
-                data-category="dynamics"
-              >
-                <h3 class="project-feature-title">
-                  Geodesic Modeling of Low-Dimensional Learning Dynamics in
-                  Deep Neural Networks
-                </h3>
-                <div class="project-feature-copy">
-                  <p class="project-category-label">Dynamics</p>
-                  <ul class="project-sublist">
-                    <li class="hover-dialog-card" tabindex="0">
-                      <h4>
-                        <a
-                          class="project-link"
-                          href="https://github.com/Hideonb8sh/geodesic-learning-dynamics-tutorial"
-                          target="_blank"
-                          rel="noreferrer"
-                          >Tutorial Article</a
-                        >
-                      </h4>
-                      <div class="hover-dialog">
-                        <p>
-                          A technical article on when low-dimensional structures
-                          in deep neural networks form identifiable,
-                          geometrically simple trajectories.
-                        </p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-
-                <figure class="project-visual project-visual-animated">
-                  <div
-                    class="project-animation geodesic-sequence"
-                    role="img"
-                    aria-label="An optimization path is traced across a loss landscape, followed by a mapping arrow, a smooth manifold, and a geodesic traced across the manifold"
-                  >
-                    <img
-                      class="animation-layer geodesic-landscape-base"
-                      src="assets/geodesic-landscape-manifold-base-v2.png"
-                      alt=""
-                      width="1536"
-                      height="1024"
-                      loading="eager"
-                      aria-hidden="true"
-                    />
-                    <img
-                      class="animation-layer geodesic-manifold-base"
-                      src="assets/geodesic-landscape-manifold-base-v2.png"
-                      alt=""
-                      width="1536"
-                      height="1024"
-                      loading="eager"
-                      aria-hidden="true"
-                    />
-                    <svg
-                      class="geodesic-motion-layer"
-                      viewBox="0 0 1536 1024"
-                      aria-hidden="true"
-                    >
-                      <path
-                        class="geodesic-drawn-path geodesic-landscape-path"
-                        pathLength="1"
-                        d="M 393 309 C 429 354, 518 372, 560 414 C 602 456, 600 504, 560 535 C 523 564, 488 557, 466 588 C 447 615, 428 628, 409 618"
-                      />
-                      <circle
-                        class="geodesic-point geodesic-landscape-start"
-                        cx="393"
-                        cy="309"
-                        r="10"
-                      />
-                      <circle
-                        class="geodesic-point geodesic-landscape-end"
-                        cx="409"
-                        cy="618"
-                        r="10"
-                      />
-                      <g class="geodesic-map-arrow">
-                        <path d="M 746 539 C 769 535, 793 535, 817 539" />
-                        <path d="M 807 522 L 832 539 L 807 556" />
-                      </g>
-                      <path
-                        class="geodesic-drawn-path geodesic-manifold-path"
-                        pathLength="1"
-                        d="M 1074 445 C 1137 444, 1183 476, 1207 529 C 1233 588, 1276 625, 1348 655"
-                      />
-                      <circle
-                        class="geodesic-point geodesic-manifold-start"
-                        cx="1074"
-                        cy="445"
-                        r="10"
-                      />
-                      <circle
-                        class="geodesic-point geodesic-manifold-end"
-                        cx="1348"
-                        cy="655"
-                        r="10"
-                      />
-                    </svg>
-                  </div>
-                </figure>
-              </article>
-
-              <p class="filter-empty" role="status" hidden>
-                No projects in this category yet.
-              </p>
-            </div>
-
-            <nav class="project-pagination" aria-label="Project pages" hidden>
-              <button
-                class="pagination-button pagination-previous"
-                type="button"
-                aria-label="Previous project page"
-              >
-                Previous
-              </button>
-              <div class="pagination-pages" aria-label="Page numbers"></div>
-              <button
-                class="pagination-button pagination-next"
-                type="button"
-                aria-label="Next project page"
-              >
-                Next
-              </button>
-            </nav>
+          <section class="panel" aria-labelledby="posts-title">
+            <h1 class="hero-title" id="posts-title">Posts</h1>
           </section>
         </main>
       </div>
@@ -226,6 +53,5 @@
       <p>Linglong Meng</p>
       <a href="index.html">Back to home</a>
     </footer>
-    <script src="posts.js?v=20260812-4"></script>
   </body>
 </html>
