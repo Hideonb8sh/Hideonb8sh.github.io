@@ -166,7 +166,39 @@ a:focus-visible, button:focus-visible, [tabindex="0"]:focus-visible { outline: 2
 .news-label { flex: 0 0 auto; color: var(--muted); font-size: 0.78rem; }
 .news-item + .news-item { border-top: 0; }
 .news-item p { margin: 0; }
-.research-origin { max-width: 64ch; }
+.research-theme {
+  margin: -8px 0 16px;
+  color: var(--text);
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: -0.012em;
+}
+
+.research-question {
+  margin: 0 0 18px;
+  padding: 14px 16px;
+  border-left: 3px solid var(--blue);
+  background: var(--surface);
+}
+
+.research-question span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.research-question p {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.research-origin { max-width: 66ch; }
 .research-intro { color: var(--muted); }
 
 .research-list {
@@ -176,8 +208,13 @@ a:focus-visible, button:focus-visible, [tabindex="0"]:focus-visible { outline: 2
   border-top: 1px solid var(--line);
 }
 
-.research-list li { position: relative; padding: 17px 38px 17px 0; border-bottom: 1px solid var(--line); }
+.research-list li { position: relative; padding: 17px 38px 16px 0; border-bottom: 1px solid var(--line); }
 .research-list h3 { margin: 0; font-size: 1rem; font-weight: 600; }
+.research-card-question {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
 
 /* Secondary pages */
 .posts-page .page-shell, .publications-page .page-shell { width: min(900px, calc(100% - 40px)); }
