@@ -166,6 +166,17 @@ a:focus-visible, button:focus-visible, [tabindex="0"]:focus-visible { outline: 2
 .news-label { flex: 0 0 auto; color: var(--muted); font-size: 0.78rem; }
 .news-item + .news-item { border-top: 0; }
 .news-item p { margin: 0; }
+
+.research-question {
+  margin: 0 0 14px;
+  padding: 12px 14px;
+  border-left: 2px solid var(--blue);
+  background: var(--surface);
+}
+
+.research-question p { margin: 0; font: inherit; }
+.research-question .research-question-label { margin-bottom: 4px; font-weight: 700; }
+
 .research-list {
   margin: 12px 0 0;
   padding: 0;
@@ -175,6 +186,7 @@ a:focus-visible, button:focus-visible, [tabindex="0"]:focus-visible { outline: 2
 
 .research-list li { position: relative; padding: 12px 32px 12px 0; border-bottom: 1px solid var(--line); }
 .research-list h3 { margin: 0; font: inherit; font-weight: 700; }
+.research-card-question { margin: 4px 0 0; color: var(--muted); font: inherit; }
 .research-list .hover-dialog-card::after { top: 12px; }
 .research-list .hover-dialog p { font: inherit; line-height: 1.45; }
 
