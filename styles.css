@@ -168,27 +168,14 @@ a:focus-visible, button:focus-visible, [tabindex="0"]:focus-visible { outline: 2
 .news-item p { margin: 0; }
 
 .research-question {
-  margin: 0 0 20px;
-  padding: 16px 18px;
-  border: 1px solid var(--blue);
-  border-radius: 4px;
+  margin: 0 0 14px;
+  padding: 12px 14px;
+  border: 2px solid var(--blue);
   background: var(--surface);
 }
 
-.research-question p {
-  margin: 0;
-  color: #354352;
-  font: inherit;
-  line-height: 1.6;
-}
-
-.research-question .research-question-label {
-  margin-bottom: 8px;
-  color: var(--blue-dark);
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 1.4;
-}
+.research-question p { margin: 0; font: inherit; }
+.research-question .research-question-label { margin-bottom: 4px; font-weight: 700; }
 
 .research-list {
   margin: 12px 0 0;
