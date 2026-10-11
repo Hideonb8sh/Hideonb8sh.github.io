@@ -169,8 +169,10 @@ a:focus-visible, button:focus-visible, [tabindex="0"]:focus-visible { outline: 2
 
 .research-question {
   margin: 0 0 20px;
-  padding: 0 0 18px;
-  border-bottom: 1px solid var(--line);
+  padding: 16px 18px;
+  border: 1px solid var(--blue);
+  border-radius: 4px;
+  background: var(--surface);
 }
 
 .research-question p {
@@ -181,21 +183,11 @@ a:focus-visible, button:focus-visible, [tabindex="0"]:focus-visible { outline: 2
 }
 
 .research-question .research-question-label {
-  display: flex;
-  align-items: center;
-  gap: 9px;
   margin-bottom: 8px;
   color: var(--blue-dark);
   font-size: 12px;
   font-weight: 700;
   line-height: 1.4;
-}
-
-.research-question-label::before {
-  content: "";
-  flex: 0 0 16px;
-  height: 1px;
-  background: currentColor;
 }
 
 .research-list {
