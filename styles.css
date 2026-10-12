@@ -186,6 +186,11 @@ a:focus-visible, button:focus-visible, [tabindex="0"]:focus-visible { outline: 2
 .research-list .hover-dialog-card::after { top: 10px; }
 .research-list .hover-dialog p { font: inherit; line-height: 1.45; }
 
+.interest-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.interest-item { min-width: 0; margin: 0; }
+.interest-item figcaption { margin-bottom: 10px; color: var(--muted); }
+.interest-item img { display: block; width: 100%; height: 180px; object-fit: contain; background: var(--paper); }
+
 /* Secondary pages */
 .posts-page .page-shell, .publications-page .page-shell { width: min(900px, calc(100% - 40px)); }
 .posts-page .profile-column, .publications-page .profile-column { display: none; }
@@ -499,6 +504,11 @@ a:focus-visible, button:focus-visible, [tabindex="0"]:focus-visible { outline: 2
   .geodesic-manifold-base { opacity: 1; clip-path: inset(0 0 0 52%); }
   .geodesic-drawn-path { opacity: 1; stroke-dashoffset: 0; }
   .geodesic-point, .geodesic-map-arrow, .lowdim-manifold-layer { opacity: 1; }
+}
+
+@media (max-width: 420px) {
+  .interest-list { grid-template-columns: 1fr; gap: 22px; }
+  .interest-item img { width: min(100%, 280px); height: 190px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
