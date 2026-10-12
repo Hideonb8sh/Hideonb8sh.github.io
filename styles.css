@@ -186,10 +186,12 @@ a:focus-visible, button:focus-visible, [tabindex="0"]:focus-visible { outline: 2
 .research-list .hover-dialog-card::after { top: 10px; }
 .research-list .hover-dialog p { font: inherit; line-height: 1.45; }
 
+.interests-panel .panel-title { font-size: 14px; font-weight: 700; }
 .interest-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 .interest-item { min-width: 0; margin: 0; }
-.interest-item figcaption { margin-bottom: 10px; color: var(--muted); }
-.interest-item img { display: block; width: 100%; height: 180px; object-fit: contain; background: var(--paper); }
+.interest-item figcaption { margin-bottom: 10px; color: var(--text); font-weight: 700; }
+.interest-item img { display: block; width: 100%; height: 180px; margin: 0 auto; object-fit: contain; background: var(--paper); }
+.interest-item .dynamics-illustration { width: auto; max-width: 100%; clip-path: inset(0 0.8% 3.8% 0.3%); }
 
 /* Secondary pages */
 .posts-page .page-shell, .publications-page .page-shell { width: min(900px, calc(100% - 40px)); }
