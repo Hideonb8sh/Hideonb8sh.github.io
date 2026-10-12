@@ -189,7 +189,6 @@ a:focus-visible, button:focus-visible, [tabindex="0"]:focus-visible { outline: 2
 .research-list .hover-dialog-card::after { top: 10px; }
 .research-list .hover-dialog p { font: inherit; line-height: 1.45; }
 
-.interests-panel .panel-title { font-size: 14px; font-weight: 700; }
 .interest-list { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; }
 .interest-item { min-width: 0; margin: 0; }
 .interest-item figcaption { margin-bottom: 10px; color: var(--text); font-weight: 700; }
