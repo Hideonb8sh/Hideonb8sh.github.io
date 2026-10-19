@@ -1,0 +1,193 @@
+WEBVTT
+
+1
+00:00:01.140 --> 00:00:06.700
+The general idea of this work is reliable sparse representation learning under uncertainty.
+
+2
+00:00:07.460 --> 00:00:15.420
+We design a heteroscedastic orthogonal transform learning algorithm for both Gaussian denoising and masked inpainting.
+
+3
+00:00:19.110 --> 00:00:22.350
+In this photo, the noise strength changes from block to block.
+
+4
+00:00:23.273 --> 00:00:26.653
+Some patches are barely corrupted; others are buried in noise.
+
+5
+00:00:27.360 --> 00:00:32.120
+We model each eight-by-eight patch as y equals x plus noise, with a known variance v.
+
+6
+00:00:32.751 --> 00:00:35.251
+A small v means a reliable observation.
+
+7
+00:00:36.363 --> 00:00:39.663
+A standard denoiser uses one noise level for every patch.
+
+8
+00:00:39.847 --> 00:00:45.827
+So it erases real detail where the data are reliable, and leaves noise where they are not.
+
+9
+00:00:46.871 --> 00:00:49.531
+Our second estimate comes from a sparse model.
+
+10
+00:00:49.845 --> 00:00:53.965
+A learned orthogonal transform, Q, turns the patch into sixty-four coefficients.
+
+11
+00:00:55.255 --> 00:00:59.135
+Thresholding keeps only the significant ones: the sparse code, z.
+
+12
+00:00:59.986 --> 00:01:04.886
+Mapping back gives the prediction, x tilde: clean-looking, but it can miss real texture.
+
+13
+00:01:06.937 --> 00:01:11.237
+So each patch has two estimates of the same clean image. Which should we trust?
+
+14
+00:01:11.257 --> 00:01:13.817
+Add one dial, delta, that blends them.
+
+15
+00:01:14.670 --> 00:01:20.410
+At delta equal to zero we trust the model completely: hard consistency, and texture is lost.
+
+16
+00:01:21.302 --> 00:01:25.902
+As delta grows, the weight shifts back to the observation, until the noise returns.
+
+17
+00:01:27.368 --> 00:01:31.828
+The best blend lies in between, and noisier patches lean more on the model.
+
+18
+00:01:33.472 --> 00:01:35.472
+The dial comes from one objective.
+
+19
+00:01:35.818 --> 00:01:38.538
+Fit the observation, weighted by its noise variance;
+
+20
+00:01:39.280 --> 00:01:42.770
+stay close to the sparse model, with a penalty of one over delta;
+
+21
+00:01:43.206 --> 00:01:44.976
+and keep the code sparse.
+
+22
+00:01:45.346 --> 00:01:49.847
+Delta going to zero forces exact agreement: hard consistency.
+
+23
+00:01:49.867 --> 00:01:53.667
+And solving for the clean patch gives exactly our blend.
+
+24
+00:01:54.398 --> 00:01:58.958
+Eliminating x is exact: delta simply adds to the noise variance.
+
+25
+00:01:59.181 --> 00:02:06.281
+So a less trusted model also learns more cautiously: each patch gets less weight, and the coding threshold rises.
+
+26
+00:02:07.920 --> 00:02:11.660
+Where should the dial sit? Compare both estimates with the true patch.
+
+27
+00:02:11.858 --> 00:02:17.538
+The observation errs by the noise, with variance v. The prediction errs by e, with energy r.
+
+28
+00:02:17.750 --> 00:02:23.558
+If these errors were unrelated, the best blend weights each estimate by its inverse variance.
+
+29
+00:02:23.578 --> 00:02:28.798
+So delta equals r: distrust the model exactly as much as it errs.
+
+30
+00:02:29.114 --> 00:02:34.706
+But the prediction was learned from the same noisy patch, so its error partly copies the noise.
+
+31
+00:02:34.726 --> 00:02:42.126
+The cross moment kappa measures that overlap, and shifts the optimum, whenever kappa is below both r and v.
+
+32
+00:02:43.114 --> 00:02:49.592
+Both moments need the clean patch, so we calibrate on a clean reference, with many independent noise draws.
+
+33
+00:02:49.612 --> 00:02:56.268
+On each draw, the inner learner alternates thresholding and a reliability-weighted update of Q.
+
+34
+00:02:57.162 --> 00:03:03.910
+Averaging the errors gives r and kappa for every patch, and each patch picks its lowest-risk delta.
+
+35
+00:03:03.930 --> 00:03:08.640
+A new delta changes what is learned, so we relearn and measure again.
+
+36
+00:03:09.339 --> 00:03:11.379
+Then the delta map is frozen.
+
+37
+00:03:11.578 --> 00:03:17.819
+For a new noisy observation of the same image, a fresh Q and Z are learned, without the clean reference,
+
+38
+00:03:17.839 --> 00:03:21.399
+and each patch is blended with its frozen delta.
+
+39
+00:03:22.141 --> 00:03:30.301
+On the castle, PSNR rises from 25.9 dB with one noise scale, to 27.8 dB with Hetero-Soft.
+
+40
+00:03:30.971 --> 00:03:34.671
+In this window, edges survive with less residual noise.
+
+41
+00:03:35.604 --> 00:03:41.804
+Across BSD68, the mean rises from 25.2 to 27.3 dB.
+
+42
+00:03:43.206 --> 00:03:45.850
+The same idea extends to missing pixels.
+
+43
+00:03:46.237 --> 00:03:53.072
+The fraction of observed pixels, rho, gives a reliability proxy: one minus rho, over rho.
+
+44
+00:03:53.092 --> 00:04:00.467
+Observed pixels stay fixed, and sparse predictions fill the gaps, with one shared delta selected on Set12.
+
+45
+00:04:00.487 --> 00:04:06.517
+Here the missing-pixel detail improves from 12.6 to 17.2 dB.
+
+46
+00:04:07.543 --> 00:04:11.203
+Observation reliability and model reliability set one rule:
+
+47
+00:04:11.817 --> 00:04:18.061
+how much each patch teaches the transform, which coefficients survive, and how the estimate is blended.
+
+48
+00:04:18.711 --> 00:04:22.551
+Use local reliability throughout learning and reconstruction.

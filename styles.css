@@ -226,6 +226,21 @@ a:focus-visible, button:focus-visible, [tabindex="0"]:focus-visible { outline: 2
 .post-card { position: relative; padding: 18px 0; border-top: 1px solid var(--line); }
 .post-card[hidden], .filter-empty[hidden] { display: none; }
 
+.project-video-post h2 { margin: 0 0 8px; font-size: 20px; line-height: 1.35; }
+.project-video-post > p { max-width: 76ch; line-height: 1.55; }
+.project-paper-title { color: var(--muted); font-style: italic; }
+.project-video { margin: 20px 0 0; }
+.project-video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--surface);
+}
+.project-video figcaption { margin-top: 8px; color: var(--muted); font-size: 12px; }
+
 .project-feature-card {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 290px;
