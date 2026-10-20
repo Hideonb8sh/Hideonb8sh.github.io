@@ -226,8 +226,9 @@ a:focus-visible, button:focus-visible, [tabindex="0"]:focus-visible { outline: 2
 .post-card { position: relative; padding: 18px 0; border-top: 1px solid var(--line); }
 .post-card[hidden], .filter-empty[hidden] { display: none; }
 
-.project-post-summary h2 { margin: 0 0 8px; font-size: 18px; line-height: 1.35; }
-.project-post-summary > p { max-width: 76ch; margin: 0; line-height: 1.55; }
+.project-post-summary h1, .project-post-summary h2 { margin: 0 0 8px; font-size: 18px; line-height: 1.35; }
+.project-post-summary > p { margin: 0; line-height: 1.55; }
+.project-post-summary > p + p { margin-top: 10px; }
 .project-detail { max-width: 760px; }
 .project-detail > p { max-width: 76ch; line-height: 1.55; }
 .project-back { margin: 0 0 18px; font-size: 13px; }
