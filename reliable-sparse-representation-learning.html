@@ -29,7 +29,7 @@
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20261019-2" />
+    <link rel="stylesheet" href="styles.css?v=20261020-2" />
   </head>
   <body class="posts-page" id="top">
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -61,6 +61,36 @@
               objective, and calibration workflow, with demonstrations of
               Gaussian denoising and an extension to masked inpainting.
             </p>
+            <figure class="objective-evolution" id="learning-objective" aria-labelledby="objective-title">
+              <figcaption id="objective-title">Learning objective</figcaption>
+              <div class="objective-stage">
+                <p class="objective-label">Uniform weighting</p>
+                <div class="objective-equation">
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline" aria-label="Minimize over Q, X, Z; sum over t; opening bracket"><mstyle displaystyle="true"><munder><mo movablelimits="false">min</mo><mrow><mi mathvariant="bold">Q</mi><mo>,</mo><mi mathvariant="bold">X</mi><mo>,</mo><mi mathvariant="bold">Z</mi></mrow></munder><munder><mo>∑</mo><mi>t</mi></munder><mo class="objective-bracket" stretchy="false" fence="true">[</mo></mstyle></math>
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline" aria-label="One half times the squared Euclidean norm of y sub t minus x sub t"><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac><mspace width="0.12em" /><msubsup><mrow><mo fence="true">‖</mo><msub><mi mathvariant="bold">y</mi><mi>t</mi></msub><mo>−</mo><msub><mi mathvariant="bold">x</mi><mi>t</mi></msub><mo fence="true">‖</mo></mrow><mn>2</mn><mn>2</mn></msubsup></mstyle></math>
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline" aria-label="Plus one half times the squared Euclidean norm of Q x sub t minus z sub t"><mstyle displaystyle="true"><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mspace width="0.12em" /><msubsup><mrow><mo fence="true">‖</mo><mi mathvariant="bold">Q</mi><msub><mi mathvariant="bold">x</mi><mi>t</mi></msub><mo>−</mo><msub><mi mathvariant="bold">z</mi><mi>t</mi></msub><mo fence="true">‖</mo></mrow><mn>2</mn><mn>2</mn></msubsup></mstyle></math>
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline" aria-label="Plus alpha times the l zero count of z sub t; closing bracket"><mstyle displaystyle="true"><mo>+</mo><mi>α</mi><msub><mrow><mo fence="true">‖</mo><msub><mi mathvariant="bold">z</mi><mi>t</mi></msub><mo fence="true">‖</mo></mrow><mn>0</mn></msub><mo class="objective-bracket" stretchy="false" fence="true">]</mo></mstyle></math>
+                </div>
+              </div>
+              <div class="objective-transition" aria-hidden="true">
+                <svg width="22" height="32" viewBox="0 0 22 32" fill="none">
+                  <path d="M11 2v27m-7-7 7 7 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="objective-stage objective-stage-weighted">
+                <p class="objective-label">Sample-dependent weighting</p>
+                <div class="objective-equation">
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline" aria-label="Minimize over Q, X, Z; sum over t; opening bracket"><mstyle displaystyle="true"><munder><mo movablelimits="false">min</mo><mrow><mi mathvariant="bold">Q</mi><mo>,</mo><mi mathvariant="bold">X</mi><mo>,</mo><mi mathvariant="bold">Z</mi></mrow></munder><munder><mo>∑</mo><mi>t</mi></munder><mo class="objective-bracket" stretchy="false" fence="true">[</mo></mstyle></math>
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline" aria-label="One half times one over v sub t times the squared Euclidean norm of y sub t minus x sub t"><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac><mspace width="0.12em" /><mfrac class="objective-weight"><mn>1</mn><msub><mi>v</mi><mi>t</mi></msub></mfrac><mspace width="0.12em" /><msubsup><mrow><mo fence="true">‖</mo><msub><mi mathvariant="bold">y</mi><mi>t</mi></msub><mo>−</mo><msub><mi mathvariant="bold">x</mi><mi>t</mi></msub><mo fence="true">‖</mo></mrow><mn>2</mn><mn>2</mn></msubsup></mstyle></math>
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline" aria-label="Plus one half times one over delta sub t times the squared Euclidean norm of Q x sub t minus z sub t"><mstyle displaystyle="true"><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mspace width="0.12em" /><mfrac class="objective-weight"><mn>1</mn><msub><mi>δ</mi><mi>t</mi></msub></mfrac><mspace width="0.12em" /><msubsup><mrow><mo fence="true">‖</mo><mi mathvariant="bold">Q</mi><msub><mi mathvariant="bold">x</mi><mi>t</mi></msub><mo>−</mo><msub><mi mathvariant="bold">z</mi><mi>t</mi></msub><mo fence="true">‖</mo></mrow><mn>2</mn><mn>2</mn></msubsup></mstyle></math>
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline" aria-label="Plus alpha times the l zero count of z sub t; closing bracket"><mstyle displaystyle="true"><mo>+</mo><mi>α</mi><msub><mrow><mo fence="true">‖</mo><msub><mi mathvariant="bold">z</mi><mi>t</mi></msub><mo fence="true">‖</mo></mrow><mn>0</mn></msub><mo class="objective-bracket" stretchy="false" fence="true">]</mo></mstyle></math>
+                </div>
+              </div>
+              <div class="objective-key">
+                <span><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline" aria-label="v sub t"><mstyle displaystyle="true"><msub><mi>v</mi><mi>t</mi></msub></mstyle></math><span>Observation uncertainty</span></span>
+                <span><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline" aria-label="delta sub t"><mstyle displaystyle="true"><msub><mi>δ</mi><mi>t</mi></msub></mstyle></math><span>Model mismatch</span></span>
+              </div>
+            </figure>
             <figure class="project-video">
               <video
                 controls
