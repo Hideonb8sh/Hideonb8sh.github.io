@@ -226,17 +226,20 @@ a:focus-visible, button:focus-visible, [tabindex="0"]:focus-visible { outline: 2
 .post-card { position: relative; padding: 18px 0; border-top: 1px solid var(--line); }
 .post-card[hidden], .filter-empty[hidden] { display: none; }
 
-.project-post-summary h1, .project-post-summary h2 { margin: 0 0 8px; font-size: 18px; line-height: 1.35; }
-.project-post-summary > p { margin: 0; line-height: 1.55; }
-.project-post-summary > p + p { margin-top: 10px; }
-.project-post-cover { display: block; width: min(100%, 420px); margin: 20px 0 2px; overflow: hidden; border: 1px solid var(--line); border-radius: 3px; }
+.project-post-summary { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 8px 28px; align-items: start; }
+.project-post-summary h1, .project-post-summary h2 { grid-column: 1; margin: 0; font-size: 18px; line-height: 1.35; }
+.project-post-summary > p { grid-column: 1; margin: 0; line-height: 1.55; }
+.project-post-cover { grid-column: 2; grid-row: 1 / span 3; display: block; width: 100%; margin: 0; background: #fff; }
 .project-post-cover img { display: block; width: 100%; height: auto; }
 .project-detail { max-width: 760px; }
 .project-detail > p { max-width: 76ch; line-height: 1.55; }
 .project-back { margin: 0 0 18px; font-size: 13px; }
 .project-paper-title { color: var(--muted); font-style: italic; }
-.project-post-summary > .paper-status { margin-top: 10px; color: var(--muted); font-size: 12px; font-style: italic; line-height: 1.5; }
-.paper-status strong { color: #555; font-style: normal; font-weight: 700; }
+.project-post-summary > .paper-status { margin: 0; color: var(--muted); font-size: 12px; font-style: italic; line-height: 1.5; }
+.paper-status strong { margin-inline-start: .12em; color: #555; font-style: normal; font-weight: 700; white-space: nowrap; }
+@media (max-width: 600px) {
+  .project-post-summary { grid-template-columns: minmax(0, 1fr) 112px; column-gap: 16px; }
+}
 .objective-evolution { position: relative; width: min(100%, 620px); margin: 24px 0 2px; --objective-play-state: running; }
 .objective-evolution[data-paused="true"] { --objective-play-state: paused; }
 .objective-evolution > figcaption { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
