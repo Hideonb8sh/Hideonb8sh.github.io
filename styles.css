@@ -229,6 +229,8 @@ a:focus-visible, button:focus-visible, [tabindex="0"]:focus-visible { outline: 2
 .project-post-summary h1, .project-post-summary h2 { margin: 0 0 8px; font-size: 18px; line-height: 1.35; }
 .project-post-summary > p { margin: 0; line-height: 1.55; }
 .project-post-summary > p + p { margin-top: 10px; }
+.project-post-cover { display: block; width: min(100%, 420px); margin: 20px 0 2px; overflow: hidden; border: 1px solid var(--line); border-radius: 3px; }
+.project-post-cover img { display: block; width: 100%; height: auto; }
 .project-detail { max-width: 760px; }
 .project-detail > p { max-width: 76ch; line-height: 1.55; }
 .project-back { margin: 0 0 18px; font-size: 13px; }
