@@ -7,7 +7,7 @@
       name="description"
       content="Linglong Meng’s blog on mathematics, machine learning, and research."
     />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#f7f9fc" />
     <meta property="og:title" content="Blog · Linglong Meng" />
     <meta
       property="og:description"
@@ -17,7 +17,7 @@
     <meta property="og:url" content="https://hideonb8sh.github.io/blog.html" />
     <meta
       property="og:image"
-      content="https://hideonb8sh.github.io/assets/portrait.jpg"
+      content="https://hideonb8sh.github.io/assets/reliable-sparse-castle-delta-cover-white-v2.png"
     />
     <title>Blog · Linglong Meng</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,39 +27,63 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css?v=20261020-6" />
-    <style>
-      .blog-intro {
-        margin: 0 0 24px;
-        font-size: 1rem;
-        line-height: 1.55;
-      }
-
-      .blog-empty {
-        margin: 0;
-      }
-    </style>
+    <link rel="stylesheet" href="blog.css?v=1" />
   </head>
-  <body>
+  <body class="blog-page">
     <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <div class="page-shell">
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="index.html#about">About</a>
-        <a href="publications.html">Publications</a>
-        <a href="posts.html">Posts</a>
-        <a class="active" href="blog.html" aria-current="page">Blog</a>
-      </nav>
+    <header class="blog-header">
+      <div class="blog-container blog-header-inner">
+        <a class="blog-wordmark" href="index.html">Linglong Meng</a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="index.html#about">About</a>
+          <a href="publications.html">Publications</a>
+          <a href="posts.html">Posts</a>
+          <a class="active" href="blog.html" aria-current="page">Blog</a>
+        </nav>
+      </div>
+    </header>
 
-      <main id="main-content">
-        <h1 class="hero-title">Blog</h1>
-        <p class="blog-intro">Notes on mathematics, machine learning, and research.</p>
-        <p class="post-card post-card-empty blog-empty">No entries yet.</p>
-      </main>
-    </div>
+    <main id="main-content" class="blog-container">
+      <header class="blog-masthead">
+        <h1>Linglong Meng’s Blog</h1>
+        <p>Notes on mathematics, machine learning, and research.</p>
+      </header>
 
-    <footer class="site-footer">
+      <section class="blog-writing" aria-labelledby="blog-writing-title">
+        <h2 id="blog-writing-title">Latest posts</h2>
+
+        <article class="blog-entry" aria-labelledby="sparse-research-title">
+          <img
+            class="blog-entry-cover"
+            src="assets/reliable-sparse-castle-delta-cover-white-v2.png"
+            alt="A grayscale castle alongside its amber soft-consistency scale map"
+            width="1536"
+            height="1024"
+          />
+          <div class="blog-entry-copy">
+            <p class="blog-entry-meta">Machine learning · Project note</p>
+            <h3 id="sparse-research-title">Reliable Sparse Representation Learning</h3>
+            <p class="blog-entry-excerpt">
+              How should a sparse model learn when some observations are more
+              reliable than others? This project explores that question through
+              image denoising and masked inpainting.
+            </p>
+            <a
+              class="blog-entry-action"
+              id="sparse-research-link"
+              href="reliable-sparse-representation-learning.html"
+              aria-labelledby="sparse-research-link sparse-research-title"
+              >Explore the project</a
+            >
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="blog-container blog-footer">
       <p>Linglong Meng</p>
-      <a href="index.html">Back to home</a>
+      <a href="index.html">Personal homepage</a>
     </footer>
   </body>
 </html>
